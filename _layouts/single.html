@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="page-header">
+  {% if page.categories %}
+  <div class="page-kicker">{{ page.categories | first }}</div>
+  {% endif %}
+  <h1>{{ page.title }}</h1>
+  {% if page.excerpt %}
+  <p class="page-desc">{{ page.excerpt | strip_html | truncate: 160 }}</p>
+  {% endif %}
+</div>
+
+<main class="page-body">
+  <div class="container">
+    {% if page.date %}
+    <div class="post-byline">
+      {{ page.date | date: "%B %-d, %Y" }}
+      &nbsp;·&nbsp; {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read
+    </div>
+    {% endif %}
+    {{ content }}
+  </div>
+</main>

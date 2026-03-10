@@ -1,6 +1,6 @@
 ---
-layout: home
+layout: archive
 title: "Notes"
 permalink: /notes/
-author_profile: true
+category: "Notes"
 ---

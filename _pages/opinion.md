@@ -1,6 +1,6 @@
 ---
-layout: home
+layout: archive
 title: "Opinion"
 permalink: /opinion/
-author_profile: true
+category: "Opinion"
 ---

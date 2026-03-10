@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<div class="hero">
+  <div class="hero-kicker">Economic Consultant · London</div>
+  <h1 class="hero-title">Vikram Bahure</h1>
+  <p class="hero-desc">Writing on finance, geopolitics, and applied economics.</p>
+  <div class="hero-actions">
+    <a href="/consulting/" class="btn btn--primary">Consulting</a>
+    <a href="/opinion/" class="btn btn--outline">Read</a>
+  </div>
+</div>
+
+<div class="features">
+  <div class="feature-card">
+    <div class="feature-label">Consulting</div>
+    <h3>Economic Analysis for Serious Problems</h3>
+    <p>Quantitative modelling for technology, defence, and public sector clients. Impact assessment, IO modelling, platform economics.</p>
+    <a href="/consulting/" class="card-link">View Services →</a>
+  </div>
+  <div class="feature-card">
+    <div class="feature-label">Opinion</div>
+    <h3>Finance, Geopolitics &amp; Applied Economics</h3>
+    <p>Fact-based opinion on markets and world events. Written for people who think carefully, not for consensus.</p>
+    <a href="/opinion/" class="card-link">Read →</a>
+  </div>
+  <div class="feature-card">
+    <div class="feature-label">Trading</div>
+    <h3>Markets Commentary &amp; Trade Ideas</h3>
+    <p>Macro analysis and positioning notes. Paid newsletter with specific trade ideas, entry levels, and risk parameters.</p>
+    <a href="/trading/" class="card-link">Learn More →</a>
+  </div>
+</div>
+
+{% if site.posts.size > 0 %}
+<main>
+  <div class="wide-container">
+    <div class="section-label">Latest</div>
+    <ul class="post-list">
+      {% for post in site.posts limit:5 %}
+      <li class="post-item">
+        <div class="post-meta">
+          <span class="post-category">{{ post.categories | first }}</span>
+          {{ post.date | date: "%B %-d, %Y" }}
+        </div>
+        <div class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </div>
+        {% if post.excerpt %}
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</main>
+{% endif %}
