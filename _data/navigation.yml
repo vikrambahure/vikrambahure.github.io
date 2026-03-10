@@ -1,0 +1,11 @@
+main:
+  - title: "About"
+    url: /about/
+  - title: "Consulting"
+    url: /consulting/
+  - title: "Opinion"
+    url: /opinion/
+  - title: "Notes"
+    url: /notes/
+  - title: "Trading"
+    url: /trading/
