@@ -2,57 +2,125 @@
 layout: default
 ---
 
-<div class="hero">
-  <div class="hero-kicker">Economic Consultant · London</div>
-  <h1 class="hero-title">Vikram Bahure</h1>
-  <p class="hero-desc">Writing on finance, geopolitics, and applied economics.</p>
-  <div class="hero-actions">
-    <a href="/consulting/" class="btn btn--primary">Consulting</a>
-    <a href="/opinion/" class="btn btn--outline">Read</a>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Economic Consultant &nbsp;·&nbsp; London</div>
+    <h1 class="hero-title">Vikram<br><em>Bahure</em></h1>
+    <p class="hero-bio">
+      Economist working at the intersection of quantitative research, policy analysis, and applied consulting — writing on markets, geopolitics, and the economics underneath events that move the world.
+    </p>
+    <div class="hero-ctas">
+      <a href="/opinion/" class="btn btn-primary">Read the writing</a>
+      <a href="/consulting/" class="btn btn-ghost">Consulting work</a>
+    </div>
   </div>
-</div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
-<div class="features">
-  <div class="feature-card">
-    <div class="feature-label">Consulting</div>
-    <h3>Economic Analysis for Serious Problems</h3>
-    <p>Quantitative modelling for technology, defence, and public sector clients. Impact assessment, IO modelling, platform economics.</p>
-    <a href="/consulting/" class="card-link">View Services →</a>
-  </div>
-  <div class="feature-card">
-    <div class="feature-label">Opinion</div>
-    <h3>Finance, Geopolitics &amp; Applied Economics</h3>
-    <p>Fact-based opinion on markets and world events. Written for people who think carefully, not for consensus.</p>
-    <a href="/opinion/" class="card-link">Read →</a>
-  </div>
-  <div class="feature-card">
-    <div class="feature-label">Trading</div>
-    <h3>Markets Commentary &amp; Trade Ideas</h3>
-    <p>Macro analysis and positioning notes. Paid newsletter with specific trade ideas, entry levels, and risk parameters.</p>
-    <a href="/trading/" class="card-link">Learn More →</a>
-  </div>
-</div>
+<!-- WRITING -->
+<section class="page-section" id="writing">
+  <div class="section-inner">
+    <div class="section-label">Writing</div>
+    <h2>Ideas worth thinking through</h2>
 
-{% if site.posts.size > 0 %}
-<main>
-  <div class="wide-container">
-    <div class="section-label">Latest</div>
-    <ul class="post-list">
-      {% for post in site.posts limit:5 %}
-      <li class="post-item">
-        <div class="post-meta">
-          <span class="post-category">{{ post.categories | first }}</span>
-          {{ post.date | date: "%B %-d, %Y" }}
+    <div class="writing-grid">
+      {% assign featured = site.posts.first %}
+      {% if featured %}
+      <a href="{{ featured.url | relative_url }}" class="post-card featured">
+        <div>
+          <div class="featured-badge">Latest</div>
+          <div class="post-tag">{{ featured.categories | join: ' &nbsp;·&nbsp; ' }} &nbsp;·&nbsp; {{ featured.date | date: "%B %-d, %Y" }}</div>
+          <div class="post-title-text">{{ featured.title }}</div>
+          <div class="post-excerpt-text">{{ featured.excerpt | strip_html | truncate: 200 }}</div>
         </div>
-        <div class="post-title">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </a>
+      {% endif %}
+
+      {% for post in site.posts offset:1 limit:3 %}
+      <a href="{{ post.url | relative_url }}" class="post-card">
+        <div>
+          <div class="post-tag">{{ post.categories | first }} &nbsp;·&nbsp; {{ post.date | date: "%B %-d, %Y" }}</div>
+          <div class="post-title-text">{{ post.title }}</div>
+          <div class="post-excerpt-text">{{ post.excerpt | strip_html | truncate: 140 }}</div>
         </div>
-        {% if post.excerpt %}
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
-        {% endif %}
-      </li>
+        <div class="post-meta-text">{{ post.date | date: "%b %Y" }}</div>
+      </a>
       {% endfor %}
-    </ul>
+    </div>
+
+    {% if site.posts.size > 4 %}
+    <div style="margin-top: 32px;">
+      <a href="/opinion/" style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);">All writing →</a>
+    </div>
+    {% endif %}
   </div>
-</main>
-{% endif %}
+</section>
+
+<!-- CONSULTING -->
+<section class="page-section" id="consulting">
+  <div class="section-inner">
+    <div class="section-label">Work</div>
+    <h2>Consulting &amp; Research</h2>
+    <p class="consulting-intro" style="font-size:17px; color:var(--ink2); font-weight:300; max-width:560px; margin-bottom:56px; line-height:1.75;">
+      Quantitative economic analysis, impact assessment, and research design for technology, defence, and public sector clients.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-title">Economic Impact Modelling</div>
+        <div class="service-desc">Multiplier modelling, input-output analysis, and sector-level assessment for policy and investment decisions.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-title">Technology Platform Economics</div>
+        <div class="service-desc">Market definition, competitive effects, and economic contribution modelling for major technology clients.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-title">Defence &amp; Public Sector</div>
+        <div class="service-desc">Economic analysis for defence and government — procurement economics, capability modelling, socioeconomic impact.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <a href="/consulting/" style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);">Full consulting profile →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="page-section" id="contact">
+  <div class="section-inner">
+    <div class="section-label">Contact</div>
+    <div class="contact-layout">
+      <div>
+        <h2>Get in touch</h2>
+        <p class="contact-text">For consulting enquiries, research collaboration, or to discuss an interesting idea.</p>
+        <div class="contact-links">
+          <a href="mailto:{{ site.author.email }}" class="contact-link">
+            <span class="contact-link-label">Email</span>
+            {{ site.author.email }}
+          </a>
+          <a href="/trading/" class="contact-link">
+            <span class="contact-link-label">Trading</span>
+            Markets newsletter &amp; trade ideas
+          </a>
+        </div>
+      </div>
+      <div class="currently">
+        <div class="currently-title">Currently</div>
+        <div class="currently-item"><div class="currently-dot"></div><div>Economic consulting — impact modelling &amp; platform economics</div></div>
+        <div class="currently-item"><div class="currently-dot"></div><div>Writing on finance, geopolitics &amp; applied economics</div></div>
+        <div class="currently-item"><div class="currently-dot"></div><div>Markets research &amp; trading commentary</div></div>
+        <div class="currently-item"><div class="currently-dot"></div><div>Based in London</div></div>
+      </div>
+    </div>
+  </div>
+</section>
