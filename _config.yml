@@ -7,7 +7,7 @@ baseurl: ""
 repository: "vikrambahure/vikrambahure.github.io"
 
 remote_theme: "mmistakes/minimal-mistakes@4.26.2"
-minimal_mistakes_skin: "air"
+minimal_mistakes_skin: "dark"
 
 # Plugins
 plugins:
@@ -19,7 +19,7 @@ plugins:
 
 # Pagination
 paginate: 8
-paginate_path: /blog/page:num/
+paginate_path: /opinion/page:num/
 
 # Reading time
 words_per_minute: 200
@@ -27,20 +27,13 @@ words_per_minute: 200
 # Author
 author:
   name: "Vikram Bahure"
-  avatar: "/assets/images/bio-photo.jpg"
-  bio: "Economic consultant. Quantitative modelling, technology economics, defence sector. Writing on finance, geopolitics, and markets. PhD, University of Geneva."
+  bio: "Economic consultant. Quantitative modelling, technology economics, defence sector. Writing on finance, geopolitics, and markets."
   location: "London, UK"
   email: "economics.vikram@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:economics.vikram@gmail.com"
-    - label: "Google Scholar"
-      icon: "fas fa-fw fa-graduation-cap"
-      url: ""
-    - label: "SSRN"
-      icon: "fas fa-fw fa-file-alt"
-      url: ""
 
 # Site footer
 footer:
@@ -80,7 +73,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       share: false
       related: true
@@ -90,4 +83,4 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
