@@ -5,36 +5,27 @@ permalink: /consulting/
 author_profile: true
 ---
 
-I provide economic consulting services to organisations requiring rigorous quantitative analysis — from impact modelling and regulatory economics to technology market assessment and defence sector work.
+I take on a small number of consulting engagements alongside my main work. My focus is quantitative economic modelling — building rigorous analysis that informs decisions.
 
-## Areas of Practice
+## What I Do
 
-**Economic Impact Modelling**
-Designing and executing large-scale economic impact assessments for public sector bodies, corporates, and policy institutions. Includes employment, output, productivity, and fiscal impact frameworks.
-
-**Technology & Platform Economics**
-Quantitative modelling for global technology platforms — market definition, competitive effects, economic contribution, and regulatory analysis. Experience with major multinational technology clients.
+**Economic Impact Assessment**
+Bottom-up and top-down modelling of the economic footprint of investments, infrastructure, and programmes — at city, sectoral, and national level.
 
 **Industrial Organisation & Sectoral Modelling**
-IO modelling, supply chain analysis, and sector-level economic assessment. Applied to both private sector strategy and public policy questions.
+Market structure analysis, competitive dynamics, and sector-level economic assessment.
 
-**Defence & Public Sector Economics**
-Economic analysis for defence and government clients, including procurement economics, capability modelling, and socioeconomic impact assessment.
+**Technology & Platform Economics**
+Economic modelling for technology clients — market contribution, AI impact, productivity, and sectoral effects.
 
-**Econometric & Causal Analysis**
-Programme evaluation, policy impact assessment, and causal inference for organisations that need credible empirical answers — not just correlations.
-
----
-
-## Clients
-
-I have worked with major organisations across the technology, defence, and public sectors in the UK and internationally. Client relationships are confidential.
+**Quantitative Analysis**
+Applied quantitative work for clients who need structured, evidence-based answers. Sectors include defence, public sector, and technology.
 
 ---
 
 ## Approach
 
-Good economics is precise, honest about uncertainty, and written so a non-economist can act on it. I work with small teams and take on a limited number of engagements to maintain quality.
+Analysis should be precise, honest about uncertainty, and written so a decision-maker can act on it. I take on limited engagements and work directly — no layers.
 
 ---
 
