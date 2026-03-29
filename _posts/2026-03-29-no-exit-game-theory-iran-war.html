@@ -502,6 +502,41 @@ date: 2026-03-29
     line-height: 1.7;
   }
 
+  /* CONDITIONS GRID */
+  .conditions {
+    margin: 14px 0 18px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+  }
+
+  .cond-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cond-row:last-child { border-bottom: none; }
+
+  .cond-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 12px;
+    background: var(--surface2);
+    display: flex;
+    align-items: flex-start;
+    padding-top: 12px;
+    line-height: 1.4;
+  }
+
+  .cond-text {
+    padding: 10px 14px;
+    color: var(--text);
+    line-height: 1.55;
+  }
+
   footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 80px; }
 
   footer p {
@@ -816,51 +851,112 @@ date: 2026-03-29
   <h2>How This Ends: Five Scenarios</h2>
 
   <div class="prob-note">
-    <div class="concept-title">A note on the probabilities</div>
-    The weights below reflect relative political feasibility under the current incentive structure, not statistical forecasting. They should be read as indicative ranges: Scenario 1 at 40 to 50%, Scenario 2 at 15 to 25%, Scenario 3 at 12 to 22%, Scenario 4 at 8 to 15%, Scenario 5 at 2 to 8%. The hardliner succession in Iran has pushed Scenario 2 lower and Scenario 1 higher than they would otherwise be: a face-saving deal requires an Iranian actor with the authority and political incentive to sign it, and that actor is not currently visible.
+    <div class="concept-title">How these scenarios are ranked</div>
+    Scenarios are ordered by how much needs to change from the current state for each to activate. A scenario ranked higher requires fewer new decisions or unlikely events. This is not a probability forecast. The ranking reflects the logic of the current incentive structure as of 29 March 2026. Each scenario block shows what conditions must hold, what would move it up, and what would move it down. Use those signals, not a number, to assess where things are heading.
   </div>
 
   <div class="scenario likely">
     <div class="scenario-label">Scenario 1: Base Case</div>
-    <div class="prob-badge">~45% / range 40-50%</div>
     <h4>Grinding Attrition: Hormuz Partially Open, War Continues</h4>
-    <p>Iran's missile stocks deplete further. Economic pressure builds globally. Iran selectively allows some tankers through, enough to reduce international outrage but not enough to relinquish effective control. The US extends deadlines again. Fighting continues in Lebanon and on Israeli territory. No formal deal, but a de facto managed standoff develops: Hormuz is "open" in practice for most non-US, non-Israeli traffic while both sides claim they are not losing.</p>
-    <p>This scenario requires the least from any party. It is the default continuation state. The hardliner succession has increased its probability specifically because there is no Iranian actor with the political cover to exit the attrition path.</p>
-    <p><strong>For India:</strong> Prolonged and unpredictable supply access on crude, LPG, and LNG. Not a one-off price shock but a sustained fiscal drag. CAD widens, CPI passthrough accumulates, rupee drifts. The full supply chain implications are laid out in the <a href="/blog/hormuz-india-exposure">Hormuz exposure piece</a>.</p>
+    <div class="conditions">
+      <div class="cond-row">
+        <div class="cond-label">Requires</div>
+        <div class="cond-text">No new decisions from any party. This is the continuation of the current state. Ranked first because it is the only scenario that activates automatically.</div>
+      </div>
+      <div class="cond-row">
+        <div class="cond-label">More likely if</div>
+        <div class="cond-text">Trump extends the April 6 deadline a third time; Iran's missile rationing holds; economic pressure on the US remains below the threshold for action; no Iranian actor with political cover emerges to negotiate.</div>
+      </div>
+      <div class="cond-row">
+        <div class="cond-label">Less likely if</div>
+        <div class="cond-text">Trump acts on energy infrastructure; Iran makes a genuine Hormuz concession; US domestic energy price shock accelerates the political timeline.</div>
+      </div>
+    </div>
+    <p>Iran's missile stocks deplete further. Economic pressure builds globally. Iran selectively allows some tankers through, enough to reduce international outrage but not enough to relinquish effective control. The US extends deadlines again. No formal deal, but a de facto managed standoff develops: Hormuz is "open" in practice for most non-US, non-Israeli traffic while both sides claim they are not losing. The hardliner succession in Iran reinforces this path specifically because no Iranian actor currently has the political cover to exit it.</p>
+    <p><strong>For India:</strong> Prolonged and unpredictable supply access on crude, LPG, and LNG. Not a one-off price shock but a sustained fiscal drag. CAD widens, CPI passthrough accumulates, rupee drifts. The full supply chain implications are in the <a href="/blog/hormuz-india-exposure">Hormuz exposure piece</a>.</p>
   </div>
 
   <div class="scenario possible">
     <div class="scenario-label">Scenario 2: Plausible Alternative</div>
-    <div class="prob-badge">~20% / range 15-25%</div>
     <h4>A Face-Saving Formula on Hormuz</h4>
-    <p>The only deal structure that appears viable lets Iran claim something resembling sovereignty without the US explicitly conceding it. The most plausible form: a transit-fee arrangement in which Iran collects fees from ships using a designated corridor, frames it as exercising sovereign authority, while the US describes it as compliance with international norms. Partial sanctions relief and a nuclear freeze complete the package.</p>
-    <p>Two obstacles stand in the way. First, the IRGC hardliners now running Iran have limited political incentive to sign anything that looks like less than full recognition. Second, any US-Iran arrangement would be fragile if Israel judged it incompatible with its core security objective and continued its own strikes independently.</p>
-    <p><strong>For India:</strong> Significant relief across crude, LPG, LNG. Rupee recovers. The structural vulnerability remains but markets get a clear signal.</p>
+    <div class="conditions">
+      <div class="cond-row">
+        <div class="cond-label">Requires</div>
+        <div class="cond-text">A creative framing on Hormuz that lets Iran claim sovereignty and the US claim compliance. An Iranian actor with authority to sign. Israel judging the deal acceptable or being constrained from continuing independently.</div>
+      </div>
+      <div class="cond-row">
+        <div class="cond-label">More likely if</div>
+        <div class="cond-text">A moderate IRGC faction emerges willing to trade Hormuz leverage for sanctions relief; US-Israeli alignment tightens; a third-party mediator (Pakistan, Oman) proposes the face-saving formula before either side does.</div>
+      </div>
+      <div class="cond-row">
+        <div class="cond-label">Less likely if</div>
+        <div class="cond-text">Hardliner consolidation in Iran deepens; Israel conducts high-casualty strikes that harden Iranian domestic opinion; Trump publicly commits to unconditional Hormuz reopening removing the room for face-saving.</div>
+      </div>
+    </div>
+    <p>The only deal structure that appears viable lets Iran claim something resembling sovereignty without the US explicitly conceding it. The most plausible form: a transit-fee arrangement in which Iran collects fees from ships using a designated corridor, frames it as sovereign authority, while the US describes it as compliance with international norms. Partial sanctions relief and a nuclear freeze complete the package. Two structural obstacles remain: IRGC hardliners have limited incentive to sign anything short of full recognition, and any deal would be fragile if Israel judged it inadequate and continued strikes independently.</p>
+    <p><strong>For India:</strong> Significant relief across crude, LPG, LNG. Rupee recovers. The structural vulnerability remains but markets get a clear directional signal.</p>
   </div>
 
   <div class="scenario possible">
     <div class="scenario-label">Scenario 3: Escalation Risk</div>
-    <div class="prob-badge">~18% / range 12-22%</div>
     <h4>US Strikes Iranian Energy Infrastructure</h4>
-    <p>The April 6 deadline arrives. Iran has not opened Hormuz in any meaningful way. Having extended twice, the political cost of a third extension exceeds the cost of action. US strikes refineries and power plants. Iran retaliates against Gulf energy infrastructure or US naval assets directly. Oil spikes sharply. The war expands geographically, European and Asian economic pressure on Washington intensifies, and the managed-attrition equilibrium breaks into something harder to contain.</p>
-    <p>This probability is driven by the credibility dynamic. Each extension without action reduces the threat's value. At some point the political math changes. Watch April 6.</p>
-    <p><strong>For India:</strong> Acute rather than chronic. USDINR 90+ is a realistic outcome in this scenario, not a tail forecast. The scenario analysis in the <a href="/blog/hormuz-india-exposure">earlier piece</a> applies in full.</p>
+    <div class="conditions">
+      <div class="cond-row">
+        <div class="cond-label">Requires</div>
+        <div class="cond-text">The April 6 deadline to hold without further extension. Trump judging the political cost of a third extension to exceed the cost of the resulting energy price shock. Iran making no meaningful Hormuz concession before April 6.</div>
+      </div>
+      <div class="cond-row">
+        <div class="cond-label">More likely if</div>
+        <div class="cond-text">Iran's IRGC publicly contradicts Trump's claims about ships transiting (this has already happened once); US farm-state political pressure on midterms accelerates; energy markets price in the threat and Trump's credibility becomes the story.</div>
+      </div>
+      <div class="cond-row">
+        <div class="cond-label">Less likely if</div>
+        <div class="cond-text">Iran allows a meaningful number of tankers through before April 6; global oil price spikes to a level that frightens the White House; a third-party mediator produces a framework worth extending for.</div>
+      </div>
+    </div>
+    <p>The April 6 deadline arrives. Iran has not opened Hormuz in any meaningful way. Having extended twice, the political cost of a third extension begins to exceed the cost of acting and absorbing the resulting price shock. US strikes refineries and power plants. Iran retaliates against Gulf energy infrastructure or US naval assets. Oil spikes sharply. The war expands geographically and the managed-attrition equilibrium breaks into something harder to contain. The key dynamic here: each extension without action further reduces the threat's credibility, which is itself a reason the scenario could accelerate.</p>
+    <p><strong>For India:</strong> Acute rather than chronic. USDINR 90+ appears a realistic outcome in this scenario. The scenario analysis in the <a href="/blog/hormuz-india-exposure">earlier piece</a> applies in full.</p>
   </div>
 
   <div class="scenario tail">
     <div class="scenario-label">Scenario 4: Tail Risk</div>
-    <div class="prob-badge">~12% / range 8-15%</div>
     <h4>Military Seizure of the Strait</h4>
-    <p>The 2,500 Marines in region conduct a combined-arms operation: mine clearance, suppression of IRGC coastal defences, naval escort of tankers. The Marines are positioned for exactly this, but the operational complexity of a defended strait is genuinely enormous. Iran's remaining arsenal is spent in resistance. The strait opens by force, at a cost in US casualties and Iranian civilian deaths that would test political tolerance across the region and among US allies.</p>
-    <p>This remains a tail risk because the political and casualty cost deters it unless all other options have failed. But the assets are in place. It is not a hypothetical option.</p>
+    <div class="conditions">
+      <div class="cond-row">
+        <div class="cond-label">Requires</div>
+        <div class="cond-text">Scenarios 1, 2, and 3 to have all failed to resolve the Hormuz closure. Political and casualty tolerance sufficient for a combined-arms maritime operation. Congressional and allied support.</div>
+      </div>
+      <div class="cond-row">
+        <div class="cond-label">More likely if</div>
+        <div class="cond-text">Energy infrastructure strikes (Scenario 3) fail to open Hormuz; Iran's IRGC coastal forces are sufficiently degraded by prior airstrikes; Trump frames the operation politically as "ending it."</div>
+      </div>
+      <div class="cond-row">
+        <div class="cond-label">Less likely if</div>
+        <div class="cond-text">Casualty projections from military planning leak; allied opposition stiffens; oil markets signal the economic cost would be too severe even for a successful operation.</div>
+      </div>
+    </div>
+    <p>The 2,500 Marines in region conduct a combined-arms operation: mine clearance, suppression of IRGC coastal defences, naval escort of tankers. The assets are positioned for exactly this, but the operational complexity of a defended strait is genuinely enormous. Iran's remaining arsenal is spent in resistance. The strait opens by force, at a cost in US casualties and Iranian civilian deaths that would test political tolerance across the region. Ranked as tail risk because it requires the failure of every less costly option first, not because the capability is absent.</p>
     <p><strong>For India:</strong> Short spike followed by rapid normalisation once the strait is physically open. Geopolitical realignment accelerates; India's non-alignment posture comes under sharp external pressure.</p>
   </div>
 
   <div class="scenario tail">
     <div class="scenario-label">Scenario 5: Extreme Tail</div>
-    <div class="prob-badge">~5% / range 2-8%</div>
     <h4>Iranian Regime Collapse</h4>
-    <p>Internal fragmentation between IRGC factions and remaining civilian structures produces a collapse or coup. A successor government negotiates from weakness and Hormuz reopens as part of a transitional arrangement. The conditions for this exist on paper: military degradation, economic collapse, succession uncertainty. But state collapse is consistently rarer and slower than conditions suggest, and external attack typically consolidates national sentiment even around unpopular governments. Regime collapse happens in the aftermath of wars more often than during them.</p>
+    <div class="conditions">
+      <div class="cond-row">
+        <div class="cond-label">Requires</div>
+        <div class="cond-text">Internal Iranian fragmentation sufficient to produce a coup or governing collapse. The conditions exist on paper; the historical base rate of this outcome during active external wars is very low.</div>
+      </div>
+      <div class="cond-row">
+        <div class="cond-label">More likely if</div>
+        <div class="cond-text">IRGC factional splits become public; food or fuel shortages reach crisis level inside Iran; the January protests resume with IRGC units refusing orders.</div>
+      </div>
+      <div class="cond-row">
+        <div class="cond-label">Less likely if</div>
+        <div class="cond-text">External attack continues consolidating Iranian national sentiment; IRGC command structure remains intact; economic pain stays at current levels rather than accelerating.</div>
+      </div>
+    </div>
+    <p>Internal fragmentation between IRGC factions and remaining civilian structures produces a collapse or coup. A successor government negotiates from weakness and Hormuz reopens. State collapse is consistently rarer than conditions suggest, and external attack typically consolidates sentiment even around unpopular governments. Regime collapse tends to happen in the aftermath of wars, not during them, precisely because external threat gives the ruling structure something to rally against.</p>
     <p><strong>For India:</strong> Best long-run outcome for energy security, with a disruptive transition period before supply normalises.</p>
   </div>
 
@@ -873,7 +969,7 @@ date: 2026-03-29
       <thead>
         <tr>
           <th>Scenario</th>
-          <th>Probability</th>
+          <th>Ranking</th>
           <th>Hormuz Status</th>
           <th>Timeline</th>
           <th>India Impact</th>
@@ -882,35 +978,35 @@ date: 2026-03-29
       <tbody>
         <tr>
           <td>1. Grinding Attrition</td>
-          <td>~45%</td>
+          <td>Base Case</td>
           <td>Partially open, managed</td>
           <td>April through summer</td>
           <td>Moderate, prolonged fiscal drag</td>
         </tr>
         <tr>
           <td>2. Face-saving deal</td>
-          <td>~20%</td>
+          <td>Plausible</td>
           <td>Opens with transit fees</td>
           <td>April to May</td>
           <td>Relief rally, structural risk stays</td>
         </tr>
         <tr>
           <td>3. US energy strikes</td>
-          <td>~18%</td>
+          <td>Escalation Risk</td>
           <td>Closed, escalating</td>
           <td>Post April 6</td>
           <td>Severe, USDINR 90+, fiscal shock</td>
         </tr>
         <tr>
           <td>4. Military seizure</td>
-          <td>~12%</td>
+          <td>Tail Risk</td>
           <td>Forced open</td>
           <td>May onwards</td>
           <td>Spike then sharp relief</td>
         </tr>
         <tr>
           <td>5. Regime collapse</td>
-          <td>~5%</td>
+          <td>Extreme Tail</td>
           <td>Opens in transition</td>
           <td>Unpredictable</td>
           <td>Best long-run, messy transition</td>
@@ -919,7 +1015,7 @@ date: 2026-03-29
     </table>
   </div>
 
-  <p class="interp">The table has one uncomfortable implication: <strong>the three scenarios without a negotiated deal account for roughly 75% of the probability weight.</strong> The deal scenario that does exist at 20% requires a face-saving Hormuz formula that neither the IRGC hardliners nor Israel have clear incentives to accept. April 6 is the next clean decision point: a third extension pushes Scenario 1 probability higher and the market should treat prolonged Hormuz disruption as the base case. If Trump acts, the conflict moves into a sharper escalation phase and the trade shifts from a chronic drift thesis to an acute spike thesis.</p>
+  <p class="interp">The table has one uncomfortable implication. <strong>The three scenarios without a negotiated deal are all ranked above the deal scenario.</strong> The face-saving deal ranked as "Plausible" requires conditions that are not currently present: an Iranian actor with authority to sign, and either Israeli acquiescence or sufficient US pressure to restrain Israel independently. April 6 is the next clean signal: a third US extension suggests the base case continues and Hormuz disruption should be treated as chronic. Action on energy infrastructure shifts the India trade from a drift thesis to a spike thesis and changes position sizing materially.</p>
 
   <div class="india-box">
     <h3>The India Read</h3>
@@ -937,7 +1033,7 @@ date: 2026-03-29
     A near-term ceasefire looks unlikely under the current incentive structure. The proposals rest on incompatible framings of what Hormuz is. The US has weakened its own coercive leverage through repeated deadline extensions. Israel's revealed preference is continued degradation. And the leadership decapitation that was supposed to force Iran to the table appears instead to have removed the actors most capable of authorising compromise.
   </p>
   <p>
-    The attrition outcome at roughly 45% is not a stable equilibrium; it is the default continuation state. Iran's missile stocks will eventually matter. The economic damage to US farm states will eventually matter. Trump's credibility on the energy plant threat approaches a terminal point. April 6 is the next clear decision point: either the pattern of managed attrition continues, or the conflict moves into a sharper escalation phase.
+    The attrition scenario is not a stable equilibrium; it is the default continuation state. Iran's missile stocks will eventually matter. The economic damage to US farm states will eventually matter. Trump's credibility on the energy plant threat approaches a terminal point. April 6 is the next clear decision point: either the pattern of managed attrition continues, or the conflict moves into a sharper escalation phase.
   </p>
 
 </div>
