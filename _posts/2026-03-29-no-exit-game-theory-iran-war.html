@@ -1,0 +1,953 @@
+---
+layout: none
+title: "No Exit: The Game Theory of the Iran War"
+date: 2026-03-29
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No Exit: The Game Theory of the Iran War</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --text: #e8e4dc;
+    --muted: #8a8580;
+    --accent: #c9783a;
+    --accent2: #e8c87a;
+    --red: #c94545;
+    --green: #4a8f6a;
+    --blue: #4a7ac9;
+    --serif: 'Playfair Display', Georgia, serif;
+    --body: 'Source Serif 4', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .hero {
+    border-bottom: 1px solid var(--border);
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(201, 120, 58, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(201, 69, 69, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .kicker::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 48px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    color: var(--text);
+  }
+
+  .deck {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--muted);
+    font-style: italic;
+    font-weight: 300;
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 32px;
+  }
+
+  .byline {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .byline span { color: var(--accent2); }
+
+  .genre-note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--muted);
+    padding: 14px 20px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 36px;
+    letter-spacing: 0.02em;
+  }
+
+  .content { padding: 60px 0; }
+
+  p { margin-bottom: 22px; color: var(--text); }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+    margin: 56px 0 20px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  h3 {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--accent2);
+    margin: 36px 0 14px;
+  }
+
+  .pullquote {
+    margin: 44px -40px;
+    padding: 32px 40px;
+    border-left: 4px solid var(--accent);
+    background: var(--surface);
+    font-family: var(--serif);
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  .pullquote cite {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    font-style: normal;
+    font-family: var(--mono);
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* TIMELINE */
+  .timeline { margin: 40px 0; position: relative; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 110px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .tl-threshold {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 28px;
+    margin: 20px 0 4px;
+  }
+
+  .tl-threshold-label {
+    grid-column: 2;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-left: 28px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--border);
+    margin-bottom: 4px;
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0 28px;
+    margin-bottom: 4px;
+    position: relative;
+  }
+
+  .tl-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    padding: 14px 0;
+    text-align: right;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+
+  .tl-body {
+    padding: 12px 0 12px 28px;
+    position: relative;
+  }
+
+  .tl-body::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 22px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+
+  .tl-body.major::before {
+    background: var(--red);
+    width: 10px;
+    height: 10px;
+    left: -5px;
+  }
+
+  .tl-body.now::before {
+    background: var(--accent2);
+    width: 12px;
+    height: 12px;
+    left: -6px;
+    box-shadow: 0 0 8px rgba(232, 200, 122, 0.4);
+  }
+
+  .tl-title {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .tl-sub {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-top: 3px;
+  }
+
+  /* DAMAGE */
+  .damage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 36px 0;
+  }
+
+  .damage-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+  }
+
+  .damage-card.red { border-left: 3px solid var(--red); }
+  .damage-card.orange { border-left: 3px solid var(--accent); }
+
+  .damage-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .damage-list {
+    list-style: none;
+    counter-reset: damage-counter;
+  }
+
+  .damage-list li {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
+    padding: 7px 0 7px 28px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    counter-increment: damage-counter;
+  }
+
+  .damage-list li:last-child { border-bottom: none; }
+
+  .damage-list li::before {
+    content: counter(damage-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--red);
+    top: 9px;
+    letter-spacing: 0.05em;
+  }
+
+  .damage-card.orange .damage-list li::before { color: var(--accent); }
+
+  /* TABLES */
+  .table-wrap {
+    margin: 36px 0;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+
+  thead th {
+    background: var(--surface2);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+  }
+
+  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--surface); }
+
+  td {
+    padding: 13px 16px;
+    vertical-align: top;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  td:first-child {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent2);
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .interp {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    margin: -16px 0 36px;
+    line-height: 1.7;
+    padding-left: 16px;
+    border-left: 2px solid var(--border);
+  }
+
+  .interp strong { color: var(--accent2); font-style: normal; }
+
+  /* STRATEGY BLOCKS */
+  .strategy-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+    margin: 28px 0;
+    position: relative;
+  }
+
+  .player-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 3px 10px;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-weight: 500;
+  }
+
+  .strategy-block.iran .player-tag { background: var(--red); }
+  .strategy-block.israel .player-tag { background: var(--accent2); color: var(--bg); }
+  .strategy-block.us .player-tag { background: var(--blue); }
+
+  .strategy-block h4 {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 0 10px;
+    color: var(--text);
+  }
+
+  .strategy-block p { font-size: 15px; margin-bottom: 10px; color: var(--text); }
+
+  /* CONCEPT BOXES */
+  .concept-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 18px 22px;
+    margin: 16px 0;
+  }
+
+  .concept-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 6px;
+  }
+
+  .concept-box p { color: var(--muted); margin: 0; font-size: 14px; line-height: 1.6; }
+
+  /* SCENARIOS */
+  .scenario {
+    margin: 24px 0;
+    padding: 24px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--muted);
+  }
+
+  .scenario.likely { border-left-color: var(--accent); }
+  .scenario.possible { border-left-color: var(--accent2); }
+  .scenario.tail { border-left-color: var(--red); }
+
+  .scenario-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .scenario.likely .scenario-label { color: var(--accent); }
+  .scenario.possible .scenario-label { color: var(--accent2); }
+  .scenario.tail .scenario-label { color: var(--red); }
+
+  .scenario h4 {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .scenario p { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+
+  .prob-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 2px 8px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--accent2);
+    margin-bottom: 10px;
+  }
+
+  .india-box {
+    margin: 44px 0;
+    padding: 28px 32px;
+    background: rgba(201, 120, 58, 0.06);
+    border: 1px solid rgba(201, 120, 58, 0.25);
+  }
+
+  .india-box h3 { font-style: normal; color: var(--accent); margin-top: 0; }
+  .india-box p { font-size: 15px; }
+
+  .prob-note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin: 36px 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 80px; }
+
+  footer p {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0;
+    letter-spacing: 0.06em;
+  }
+
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(201, 120, 58, 0.3); }
+  a:hover { border-bottom-color: var(--accent); }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+  strong { color: var(--accent2); font-weight: 400; }
+
+  @media (max-width: 600px) {
+    .damage-grid { grid-template-columns: 1fr; }
+    .pullquote { margin: 32px 0; }
+    .timeline::before { left: 80px; }
+    .tl-item { grid-template-columns: 80px 1fr; }
+    .tl-threshold { grid-template-columns: 80px 1fr; }
+    .tl-date { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="kicker">Geopolitics + Markets &bull; March 2026</div>
+    <h1>No Exit: The War Over the Strait of Hormuz</h1>
+    <p class="deck">A month into the war, diplomacy appears secondary to coercion and escalation remains the dominant dynamic. Here is what has happened, what each side appears to want, and how this ends in all the ways it realistically could.</p>
+    <div class="byline">By <span>Vikram Bahure</span> &bull; vikrambahure.github.io &bull; 29 March 2026</div>
+  </div>
+</div>
+
+<div class="content">
+<div class="container">
+
+  <div class="genre-note">
+    Note on sourcing: This analysis synthesises reported claims, official statements, and market implications drawn from coverage as of 29 March 2026. Many underlying facts remain contested or only partially independently verified. Where inference goes beyond reported claims, it is signalled as such.
+  </div>
+
+  <p>
+    On 28 February 2026, during active nuclear negotiations, the United States and Israel launched a surprise attack on Iran. According to widely reported accounts, Supreme Leader Khamenei was killed in the first hours. A month later, the Strait of Hormuz is effectively closed, ships are stalled across the Persian Gulf, and both sides are still firing. There is no ceasefire, and current incentives do not yet point toward a durable one.
+  </p>
+
+  <h2>What Has Happened: The Timeline</h2>
+
+  <div class="timeline">
+
+    <div class="tl-threshold">
+      <div class="tl-threshold-label">Phase 1: Domestic unrest and pre-war pressure</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">JAN 2026</div>
+      <div class="tl-body major">
+        <div class="tl-title">Mass protests erupt across Iran</div>
+        <div class="tl-sub">Reported as the largest since 1979, with an estimated 5 million participants. Security forces respond with lethal force. Trump issues military threats.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">MID-FEB</div>
+      <div class="tl-body">
+        <div class="tl-title">US and Iran begin indirect nuclear talks</div>
+        <div class="tl-sub">Negotiations open via intermediaries, framed publicly as a de-escalation effort.</div>
+      </div>
+    </div>
+
+    <div class="tl-threshold">
+      <div class="tl-threshold-label">Phase 2: Interstate war begins</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">28 FEB</div>
+      <div class="tl-body major">
+        <div class="tl-title">Operation Epic Fury begins</div>
+        <div class="tl-sub">US and Israel launch strikes mid-negotiation. Khamenei reported killed on Day 1. Multiple senior officials killed in the opening hours. US Central Command claims 11,000+ targets struck since the war began.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">1 MAR</div>
+      <div class="tl-body major">
+        <div class="tl-title">Iran closes the Strait of Hormuz</div>
+        <div class="tl-sub">Transit drops from approximately 130 ships per day to under 6. Roughly 150 freight ships reported stalled in the Gulf. Iran launches drones and missiles at Israel and US bases across Bahrain, Qatar, Kuwait, Jordan, Saudi Arabia, and the UAE.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">1 MAR</div>
+      <div class="tl-body">
+        <div class="tl-title">2,500 US Marines arrive in region</div>
+        <div class="tl-sub">31st Marine Expeditionary Unit deployed. Positioned for a possible Hormuz ground operation.</div>
+      </div>
+    </div>
+
+    <div class="tl-threshold">
+      <div class="tl-threshold-label">Phase 3: Attrition and failed diplomacy</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">5 MAR</div>
+      <div class="tl-body">
+        <div class="tl-title">Iran's missile rate begins declining</div>
+        <div class="tl-sub">Over 500 ballistic and naval missiles and nearly 2,000 drones fired since Day 1. Analysts attribute the slowdown to depletion and a deliberate rationing strategy.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">MID-MAR</div>
+      <div class="tl-body">
+        <div class="tl-title">E3 back defensive measures; Lebanon front opens</div>
+        <div class="tl-sub">UK, France, Germany signal support for proportionate defensive action against Iranian drones. UK confirms Iran fired missiles at British-American base in the Indian Ocean. Israel deploys additional troops into southern Lebanon.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">25 MAR</div>
+      <div class="tl-body major">
+        <div class="tl-title">US 15-point proposal delivered; Iran rejects it the same day</div>
+        <div class="tl-sub">Delivered via Pakistan. Covers sanctions relief, nuclear rollback, missile limits, Hormuz reopening. Iran's counter covers Hormuz sovereignty, reparations, a no-future-war guarantee, and full missile program retention.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">26 MAR</div>
+      <div class="tl-body">
+        <div class="tl-title">Israel kills IRGC Navy chief Tangsiri</div>
+        <div class="tl-sub">The commander directly responsible for the Hormuz blockade killed along with senior intelligence and operations chiefs. Israel simultaneously accelerates targeting in Tehran and Isfahan.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">26 MAR</div>
+      <div class="tl-body">
+        <div class="tl-title">Trump extends Hormuz deadline to April 6</div>
+        <div class="tl-sub">Iran allowed a reported 10 tankers through as a goodwill gesture. The IRGC simultaneously warned all other ships the strait remains closed. This is the second extension of the deadline.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">28 MAR</div>
+      <div class="tl-body major">
+        <div class="tl-title">Civilian infrastructure struck on both sides</div>
+        <div class="tl-sub">US-Israeli strikes damage a Tehran university and a large water reservoir in Khuzestan. Iran targets Dubai, destroying a depot it claims was supporting US operations.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">29 MAR</div>
+      <div class="tl-body now">
+        <div class="tl-title">Hot war, no ceasefire, Hormuz effectively closed</div>
+        <div class="tl-sub">Iran's FM publicly: "We never asked for a ceasefire." Iran's Parliament moving to formalise Hormuz transit fees. April 6 deadline the next significant decision point.</div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    The succession problem sits at the centre of the current impasse and is worth flagging before the analysis continues. When Khamenei was killed, control did not pass to pragmatists. The IRGC now runs Iran with limited civilian constraint. Leadership decapitation can harden a regime when it removes figures capable of authorising compromise and empowers actors whose legitimacy depends on resistance. That appears to be the dynamic here: any successor who negotiates a settlement resembling capitulation would be delegitimised immediately among the base it needs to govern. The attrition path is not just a military strategy; it is the politically survivable one for a post-decapitation government.
+  </p>
+
+  <h2>The Damage Scorecard</h2>
+
+  <p>The scale of damage on both sides matters for understanding how entrenched each party has become. Losses this large do not make de-escalation easier; they typically make it harder, because any leadership that stops now has to explain what the cost was for.</p>
+
+  <div class="damage-grid">
+    <div class="damage-card red">
+      <div class="damage-label">Iranian Leadership Killed</div>
+      <ul class="damage-list">
+        <li>Supreme Leader Ali Khamenei, reported Day 1</li>
+        <li>Intelligence Minister, confirmed killed</li>
+        <li>IRGC Navy Chief Alireza Tangsiri, 26 March</li>
+        <li>IRGC Navy intelligence and operations chiefs, same strike</li>
+        <li>Multiple senior officials in opening hours</li>
+      </ul>
+    </div>
+    <div class="damage-card orange">
+      <div class="damage-label">Iranian Infrastructure</div>
+      <ul class="damage-list">
+        <li>11,000+ targets claimed struck by US CENTCOM</li>
+        <li>Military bases and government facilities</li>
+        <li>Isfahan arms factories and defence infrastructure</li>
+        <li>Khuzestan water reservoir, civilian</li>
+        <li>Tehran university buildings, civilian</li>
+        <li>Uranium enrichment capacity reportedly "decimated"</li>
+      </ul>
+    </div>
+    <div class="damage-card red">
+      <div class="damage-label">Israeli and Gulf Damage</div>
+      <ul class="damage-list">
+        <li>1,706 Israelis treated by emergency services since Day 1</li>
+        <li>Ongoing ballistic missile barrages on central Israel</li>
+        <li>US Patriot maintenance facility struck in Bahrain</li>
+        <li>Dubai targeted; anti-drone depot destroyed</li>
+        <li>Lebanon front reopened with fresh troop deployments</li>
+      </ul>
+    </div>
+    <div class="damage-card orange">
+      <div class="damage-label">Global Economic Damage</div>
+      <ul class="damage-list">
+        <li>Hormuz transit: approximately 130 ships per day to under 6</li>
+        <li>Roughly 150 ships stalled across the Persian Gulf</li>
+        <li>Around 20% of world oil and gas trade disrupted</li>
+        <li>Energy prices elevated globally</li>
+        <li>Fertiliser shortages already affecting US farm states</li>
+        <li>Iran formalising Hormuz transit fees in Parliament</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="interp">The damage to Iranian leadership is significant but has not produced the expected strategic effect. Removing the top command did not appear to weaken Iran's hold on Hormuz; it removed figures who might have been capable of authorising compromise and replaced them with hardliners whose claim to legitimacy rests on resistance. Meanwhile, the global economic damage is cumulative and distributes across importing countries, including the US, in ways that add political cost to Washington rather than Tehran. <strong>The side absorbing the most military damage is not necessarily the side bearing the highest political cost.</strong></p>
+
+  <h2>What Each Side Appears to Want</h2>
+
+  <p>The proposals exchanged via Pakistan are not just misaligned on details. They are structured around incompatible premises on Hormuz, which means the gap is not only a bargaining problem but also a problem of incompatible political framing.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Party</th>
+          <th>Core Objective</th>
+          <th>Minimum Acceptable</th>
+          <th>Red Line</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>USA</td>
+          <td>Permanent end to Iran nuclear program, Hormuz open, Iran unable to rebuild</td>
+          <td>Hormuz reopened, missile limits, nuclear freeze</td>
+          <td>Iran with nuclear capacity or permanent Hormuz closure</td>
+        </tr>
+        <tr>
+          <td>Israel</td>
+          <td>Maximum irreversible degradation of Iran's military and nuclear capability</td>
+          <td>Enrichment destroyed, Hezbollah suppressed</td>
+          <td>Any deal leaving Iran capable of rebuilding within years</td>
+        </tr>
+        <tr>
+          <td>Iran</td>
+          <td>Regime survival, guarantee of no repeat attack, retain strategic leverage</td>
+          <td>Hormuz sovereignty recognised, missiles intact, sanctions lifted</td>
+          <td>Unconditional surrender, Hormuz relinquished, nuclear program dismantled</td>
+        </tr>
+        <tr>
+          <td>Gulf States</td>
+          <td>Hormuz open, war ends before their infrastructure is targeted</td>
+          <td>Neutral transit through the strait, no escalation on their soil</td>
+          <td>Being drawn into the war as direct combatants</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="interp">Put the US and Iran side by side on Hormuz and the structural incompatibility becomes clear. <strong>The US treats Hormuz reopening as a precondition for talks. Iran treats Hormuz sovereignty as the reward for concluding talks.</strong> These are not positions that split the difference: the US is saying "open the strait and then we negotiate," while Iran is saying "recognise our control over the strait as part of any deal." Israel's revealed preference, within this framework, appears to be continued degradation of Iranian capability rather than an early bargain, which means Israel's incentive is to keep fighting regardless of what the US and Iran are doing at the table.</p>
+
+  <div class="pullquote">
+    The US demands Hormuz open as a precondition. Iran demands Hormuz sovereignty as the reward. That is not a negotiating gap. That is two different framings of what Hormuz is.
+    <cite>The framing problem</cite>
+  </div>
+
+  <h2>What Each Side Appears to Be Doing</h2>
+
+  <div class="strategy-block us">
+    <div class="player-tag">United States</div>
+    <h4>"We Negotiate with Bombs" / Hegseth, US Defence Secretary</h4>
+    <p>The strategy here is compellence: using force to make the other side stop doing something specific. In this case, the US wants Iran to open the strait. The mechanism is strikes plus deadlines, with extensions granted when Iran makes small gestures. This is textbook compellence in design. The problem is that compellence only works when the cost of not complying exceeds the cost of complying. For Iran, giving up Hormuz appears to cost more politically than absorbing bombs. Every deadline extension signals to Tehran that the real threat has not arrived yet, which reduces pressure to comply rather than increasing it. Trump faces a bind: actually striking energy infrastructure would cause a price shock that rebounds on American consumers and US political allies. Iran's revealed behaviour suggests it has read this constraint correctly.</p>
+  </div>
+
+  <div class="strategy-block iran">
+    <div class="player-tag">Iran</div>
+    <h4>War of Attrition: Outlast Rather Than Concede</h4>
+    <p>The apparent strategy is not to win militarily but to make the war expensive enough globally that the US eventually accepts terms closer to Iran's position. Hormuz is the instrument: a fifth of the world's traded oil and gas normally flows through that strait. Every week of closure adds to global energy prices, US inflation, and political pressure on Washington heading into midterms. Iran also appears to be rationing its missiles deliberately, knowing it started with a finite stock. The underlying logic seems to be: preserve enough deterrence to make a ground operation against the strait genuinely costly, while the economic clock runs. Adding to this, with hardliners now in effective control and no civilian authority with the political cover to offer concessions, the attrition path is the only domestically sustainable one for Iran's current leadership.</p>
+  </div>
+
+  <div class="strategy-block israel">
+    <div class="player-tag">Israel</div>
+    <h4>Damage Maximisation: Irreversible Degradation</h4>
+    <p>Israel's revealed preference appears distinct from the US position. Rather than a negotiated settlement, Israel's actions suggest a priority on determining the condition Iran is in when the shooting eventually stops. Confirmed reporting indicates Israel was accelerating targeting around each ceasefire rumour specifically to maximise destruction before any pause could lock in. This is rational within Israel's frame: a ceasefire that leaves Iran capable of rebuilding would be seen as a strategic failure. A ceasefire after maximum degradation is the acceptable version. This means Israel's incentive is systematically to keep fighting a little longer, and any US-brokered deal would be fragile if Israel judged it incompatible with its core security objective.</p>
+  </div>
+
+  <h2>The Game Theory, in Plain English</h2>
+
+  <p>The following concepts are standard tools in conflict bargaining analysis. They are not predictions; they are a way of asking whether the current structure of incentives supports a stable stopping point.</p>
+
+  <div class="concept-box">
+    <div class="concept-title">Nash Equilibrium</div>
+    <p>A situation where no player can improve their outcome by unilaterally changing their strategy. In a ceasefire context, this means that given the other side is not fighting, neither side has an incentive to resume. If either side would gain by breaking the ceasefire, then peace is not a Nash equilibrium. Under current incentives, continued conflict appears more self-enforcing than a stable ceasefire, because at least one key actor retains incentives to keep fighting even if another seeks restraint. With three players whose preferences diverge, the more accurate framing is: the current incentive structure does not yet support a self-enforcing peace.</p>
+  </div>
+
+  <div class="concept-box">
+    <div class="concept-title">BATNA: Best Alternative to a Negotiated Agreement</div>
+    <p>What each side falls back on if there is no deal. Iran's fallback option appears more durable than many initial outside assessments implied: it is not peace without terms but continued attrition with Hormuz as the primary bargaining lever. The US fallback is military seizure of the strait, technically feasible but operationally and politically costly. The relative strength of Iran's BATNA is one reason the attrition equilibrium has held longer than compellence theory would predict.</p>
+  </div>
+
+  <div class="concept-box">
+    <div class="concept-title">Credible Threats and Commitments</div>
+    <p>Repeated deadline extensions weaken the credibility of coercive threats. Each time the US extends without acting, the cost Iran attributes to continued defiance falls. At the same time, neither side appears able to make a believable commitment that a concession today would prevent renewed conflict tomorrow. Iran has no mechanism to trust that opening Hormuz would lead to sanctions relief rather than a renegotiated US position. That mutual credibility problem compounds the framing incompatibility described above.</p>
+  </div>
+
+  <div class="concept-box">
+    <div class="concept-title">Coalition Instability</div>
+    <p>The US and Israel are formally aligned but appear to have divergent preferred outcomes. In coalitions, the actor with the strongest preference for continued action can shape outcomes disproportionately, especially when it can independently escalate without the other's authorisation. Israel's ability to conduct independent strikes means it can effectively veto a ceasefire it judges inadequate, regardless of what the US agrees at the table.</p>
+  </div>
+
+  <div class="concept-box">
+    <div class="concept-title">Decapitation Paradox</div>
+    <p>Leadership decapitation can harden a regime when it removes figures capable of authorising compromise and empowers actors whose claim to legitimacy depends on continued resistance. Whether Khamenei represented a moderating constraint relative to his successors is debatable, but the structural effect is observable: the actors now running Iran have no political incentive to be seen as the government that negotiated from a position of military attack.</p>
+  </div>
+
+  <p>
+    Taken together, the current incentive structure does not appear to support a self-enforcing ceasefire. Iran's fallback of holding Hormuz remains viable. Israel's incentive is to keep fighting. The US wants a deal but has weakened its own coercive leverage through repeated extensions. These three positions do not converge on a shared stopping point under current conditions.
+  </p>
+
+  <h2>How This Ends: Five Scenarios</h2>
+
+  <div class="prob-note">
+    <div class="concept-title">A note on the probabilities</div>
+    The weights below reflect relative political feasibility under the current incentive structure, not statistical forecasting. They should be read as indicative ranges: Scenario 1 at 40 to 50%, Scenario 2 at 15 to 25%, Scenario 3 at 12 to 22%, Scenario 4 at 8 to 15%, Scenario 5 at 2 to 8%. The hardliner succession in Iran has pushed Scenario 2 lower and Scenario 1 higher than they would otherwise be: a face-saving deal requires an Iranian actor with the authority and political incentive to sign it, and that actor is not currently visible.
+  </div>
+
+  <div class="scenario likely">
+    <div class="scenario-label">Scenario 1: Base Case</div>
+    <div class="prob-badge">~45% / range 40-50%</div>
+    <h4>Grinding Attrition: Hormuz Partially Open, War Continues</h4>
+    <p>Iran's missile stocks deplete further. Economic pressure builds globally. Iran selectively allows some tankers through, enough to reduce international outrage but not enough to relinquish effective control. The US extends deadlines again. Fighting continues in Lebanon and on Israeli territory. No formal deal, but a de facto managed standoff develops: Hormuz is "open" in practice for most non-US, non-Israeli traffic while both sides claim they are not losing.</p>
+    <p>This scenario requires the least from any party. It is the default continuation state. The hardliner succession has increased its probability specifically because there is no Iranian actor with the political cover to exit the attrition path.</p>
+    <p><strong>For India:</strong> Prolonged and unpredictable supply access on crude, LPG, and LNG. Not a one-off price shock but a sustained fiscal drag. CAD widens, CPI passthrough accumulates, rupee drifts. The full supply chain implications are laid out in the <a href="/blog/hormuz-india-exposure">Hormuz exposure piece</a>.</p>
+  </div>
+
+  <div class="scenario possible">
+    <div class="scenario-label">Scenario 2: Plausible Alternative</div>
+    <div class="prob-badge">~20% / range 15-25%</div>
+    <h4>A Face-Saving Formula on Hormuz</h4>
+    <p>The only deal structure that appears viable lets Iran claim something resembling sovereignty without the US explicitly conceding it. The most plausible form: a transit-fee arrangement in which Iran collects fees from ships using a designated corridor, frames it as exercising sovereign authority, while the US describes it as compliance with international norms. Partial sanctions relief and a nuclear freeze complete the package.</p>
+    <p>Two obstacles stand in the way. First, the IRGC hardliners now running Iran have limited political incentive to sign anything that looks like less than full recognition. Second, any US-Iran arrangement would be fragile if Israel judged it incompatible with its core security objective and continued its own strikes independently.</p>
+    <p><strong>For India:</strong> Significant relief across crude, LPG, LNG. Rupee recovers. The structural vulnerability remains but markets get a clear signal.</p>
+  </div>
+
+  <div class="scenario possible">
+    <div class="scenario-label">Scenario 3: Escalation Risk</div>
+    <div class="prob-badge">~18% / range 12-22%</div>
+    <h4>US Strikes Iranian Energy Infrastructure</h4>
+    <p>The April 6 deadline arrives. Iran has not opened Hormuz in any meaningful way. Having extended twice, the political cost of a third extension exceeds the cost of action. US strikes refineries and power plants. Iran retaliates against Gulf energy infrastructure or US naval assets directly. Oil spikes sharply. The war expands geographically, European and Asian economic pressure on Washington intensifies, and the managed-attrition equilibrium breaks into something harder to contain.</p>
+    <p>This probability is driven by the credibility dynamic. Each extension without action reduces the threat's value. At some point the political math changes. Watch April 6.</p>
+    <p><strong>For India:</strong> Acute rather than chronic. USDINR 90+ is a realistic outcome in this scenario, not a tail forecast. The scenario analysis in the <a href="/blog/hormuz-india-exposure">earlier piece</a> applies in full.</p>
+  </div>
+
+  <div class="scenario tail">
+    <div class="scenario-label">Scenario 4: Tail Risk</div>
+    <div class="prob-badge">~12% / range 8-15%</div>
+    <h4>Military Seizure of the Strait</h4>
+    <p>The 2,500 Marines in region conduct a combined-arms operation: mine clearance, suppression of IRGC coastal defences, naval escort of tankers. The Marines are positioned for exactly this, but the operational complexity of a defended strait is genuinely enormous. Iran's remaining arsenal is spent in resistance. The strait opens by force, at a cost in US casualties and Iranian civilian deaths that would test political tolerance across the region and among US allies.</p>
+    <p>This remains a tail risk because the political and casualty cost deters it unless all other options have failed. But the assets are in place. It is not a hypothetical option.</p>
+    <p><strong>For India:</strong> Short spike followed by rapid normalisation once the strait is physically open. Geopolitical realignment accelerates; India's non-alignment posture comes under sharp external pressure.</p>
+  </div>
+
+  <div class="scenario tail">
+    <div class="scenario-label">Scenario 5: Extreme Tail</div>
+    <div class="prob-badge">~5% / range 2-8%</div>
+    <h4>Iranian Regime Collapse</h4>
+    <p>Internal fragmentation between IRGC factions and remaining civilian structures produces a collapse or coup. A successor government negotiates from weakness and Hormuz reopens as part of a transitional arrangement. The conditions for this exist on paper: military degradation, economic collapse, succession uncertainty. But state collapse is consistently rarer and slower than conditions suggest, and external attack typically consolidates national sentiment even around unpopular governments. Regime collapse happens in the aftermath of wars more often than during them.</p>
+    <p><strong>For India:</strong> Best long-run outcome for energy security, with a disruptive transition period before supply normalises.</p>
+  </div>
+
+  <hr class="divider">
+
+  <h2>Scenario Summary</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>Probability</th>
+          <th>Hormuz Status</th>
+          <th>Timeline</th>
+          <th>India Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Grinding Attrition</td>
+          <td>~45%</td>
+          <td>Partially open, managed</td>
+          <td>April through summer</td>
+          <td>Moderate, prolonged fiscal drag</td>
+        </tr>
+        <tr>
+          <td>2. Face-saving deal</td>
+          <td>~20%</td>
+          <td>Opens with transit fees</td>
+          <td>April to May</td>
+          <td>Relief rally, structural risk stays</td>
+        </tr>
+        <tr>
+          <td>3. US energy strikes</td>
+          <td>~18%</td>
+          <td>Closed, escalating</td>
+          <td>Post April 6</td>
+          <td>Severe, USDINR 90+, fiscal shock</td>
+        </tr>
+        <tr>
+          <td>4. Military seizure</td>
+          <td>~12%</td>
+          <td>Forced open</td>
+          <td>May onwards</td>
+          <td>Spike then sharp relief</td>
+        </tr>
+        <tr>
+          <td>5. Regime collapse</td>
+          <td>~5%</td>
+          <td>Opens in transition</td>
+          <td>Unpredictable</td>
+          <td>Best long-run, messy transition</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="interp">The table has one uncomfortable implication: <strong>the three scenarios without a negotiated deal account for roughly 75% of the probability weight.</strong> The deal scenario that does exist at 20% requires a face-saving Hormuz formula that neither the IRGC hardliners nor Israel have clear incentives to accept. April 6 is the next clean decision point: a third extension pushes Scenario 1 probability higher and the market should treat prolonged Hormuz disruption as the base case. If Trump acts, the conflict moves into a sharper escalation phase and the trade shifts from a chronic drift thesis to an acute spike thesis.</p>
+
+  <div class="india-box">
+    <h3>The India Read</h3>
+    <p>
+      For import-dependent economies, the strategic question quickly becomes a balance-of-payments and inflation question. India is among the most exposed. It sources over 40% of its crude through the Strait, according to widely cited estimates, and is also heavily dependent on Hormuz for LPG and LNG. The full supply chain is covered in the <a href="/blog/hormuz-india-exposure">Hormuz exposure piece</a>.
+    </p>
+    <p>
+      The base case, Scenario 1, means prolonged and inconsistent access rather than a sharp spike that resolves. Every additional week of partial closure widens the current account deficit, raises CPI passthrough, and weakens the rupee in a way the RBI can slow but not reverse. The April 6 deadline matters significantly for how the India trade plays: a third extension suggests the drift thesis continues; action on energy infrastructure activates the spike thesis and changes position sizing materially.
+    </p>
+  </div>
+
+  <h2>The Bottom Line</h2>
+
+  <p>
+    A near-term ceasefire looks unlikely under the current incentive structure. The proposals rest on incompatible framings of what Hormuz is. The US has weakened its own coercive leverage through repeated deadline extensions. Israel's revealed preference is continued degradation. And the leadership decapitation that was supposed to force Iran to the table appears instead to have removed the actors most capable of authorising compromise.
+  </p>
+  <p>
+    The attrition outcome at roughly 45% is not a stable equilibrium; it is the default continuation state. Iran's missile stocks will eventually matter. The economic damage to US farm states will eventually matter. Trump's credibility on the energy plant threat approaches a terminal point. April 6 is the next clear decision point: either the pattern of managed attrition continues, or the conflict moves into a sharper escalation phase.
+  </p>
+
+</div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>vikrambahure.github.io &bull; Geopolitics + Economics &bull; 29 March 2026 &bull; Not financial advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
