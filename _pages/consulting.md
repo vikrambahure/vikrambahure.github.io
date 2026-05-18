@@ -7,13 +7,13 @@ author_profile: true
 
 I work as a consulting economist on quantitative economic analysis, scenario modelling, and impact assessment.
 
-For a markets reader, this matters because the consulting work is the other half of the profile: it is where the macro narrative, client communication, and decision-focused writing were built.
+My day job is client-facing economics: turning data, macro assumptions, and sector detail into analysis that can support policy, investment, and strategic decisions. Independently, I apply the same empirical discipline to markets research, with a focus on rates, macro, FX, and cross-asset signals.
 
-## Relevant Work
+## Day Job
 
 **Scenario analysis**
 
-Applied macro and sector scenarios for clients who need to understand how shocks transmit through economies, sectors, and firms.
+Applied macro and sector scenarios for clients assessing how shocks transmit through economies, sectors, and firms.
 
 **Economic impact modelling**
 
@@ -27,8 +27,22 @@ Labour-market, productivity, and sectoral analysis for technology clients, inclu
 
 Market structure, competitive dynamics, and sector-level economic assessment.
 
-## How It Connects To Markets
+## Independent Markets Work
 
-The same habits matter in both settings: define the question cleanly, choose a model that fits the decision, explain uncertainty, and write so the reader can act.
+**Rates relative value**
+
+Cointegration, ECM, Kalman hedge ratios, PCA residuals, and regime checks across government bond markets.
+
+**Macro strategy**
+
+UK inflation scenarios, gilt-curve factors, SONIA policy-path gaps, and breakeven analysis.
+
+**Cross-asset signals**
+
+FX factor walk-forward work, equity-index options signals, volatility-regime filters, and India macro-market links.
+
+## Common Thread
+
+The common thread is decision-focused modelling: define the question, identify the transmission channel, choose a model that fits the decision, test the result honestly, and write it clearly.
 
 [Contact me](mailto:economics.vikram@gmail.com)

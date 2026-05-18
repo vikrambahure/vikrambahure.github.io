@@ -4,9 +4,9 @@ title: "Profile"
 permalink: /about/
 ---
 
-I am a consulting economist in London, targeting rates and macro research roles on the buy side and sell side.
+I am a consulting economist in London, targeting macro research and strategy roles across rates, FX, commodities, equity indices, and cross-asset themes.
 
-My background combines three things that are rarely found together: formal economics training, client-facing macro scenario work, and a personal cross-asset research stack with live execution.
+My profile sits at the intersection of applied economics and markets: formal training in economics and finance, client-facing macro scenario work, and an independent research stack that turns macro questions into testable market hypotheses.
 
 ## Core Profile
 
@@ -14,19 +14,27 @@ My background combines three things that are rarely found together: formal econo
 
 **Applied macro and scenario work.** At Public First, I work on quantitative economic analysis for global technology and policy clients, including scenario modelling, impact assessment, and applied econometric work.
 
-**Markets research stack.** Independently, I build and test rates relative-value, FX, equity-volatility, and macro signal frameworks. The work is designed to be reproducible, cost-aware, and honest about null results.
+**Cross-asset research stack.** Independently, I build and test macro-market frameworks across rates relative value, FX, equity-index options, inflation, and commodities. The emphasis is on reproducible research, clear trade logic, cost-aware backtests, and honest treatment of weak or rejected signals.
 
-## Portfolio Purpose
+## Macro Research Approach
 
-This site is not a general blog. It is a public portfolio for macro and rates research.
+The question I care about is how macro shocks transmit into asset prices: policy rates, curves, currencies, volatility, commodities, and regional equity-index risk.
 
-The main evidence is the writing: a dated research note, a clear hypothesis, transparent methodology, backtest results, limitations, and enough technical detail for a strategist or portfolio manager to judge the work.
+The work starts with an economic mechanism, then moves to data, model choice, signal construction, validation, and writing. A useful research note should make the tradeable question explicit and show where the evidence is strong, weak, or conditional on regime.
 
 ## Current Research Focus
 
-- European rates relative value: Italy-Germany front-end convergence, Johansen cointegration, ECM signals, and regime stability.
-- UK macro and rates: inflation scenarios, gilt-curve factors, SONIA policy-path deviations, and breakeven analysis.
-- Cross-asset macro: FX factor signals, index options, volatility regime filters, and India macro-market links.
+- Rates: European front-end convergence, curve factors, policy-path deviations, and inflation-linked pricing.
+- FX: macro factor signals, walk-forward validation, dollar cycles, and INR-linked transmission.
+- Equity indices and volatility: Nifty options, volatility regimes, dealer gamma, and expiry-pinning behaviour.
+- Commodities: energy supply chains, oil and gas benchmarks, and macro transmission into inflation and external balances.
+- UK macro: inflation scenarios, gilt-curve factors, SONIA policy-path gaps, and breakeven analysis.
+
+## Portfolio Purpose
+
+This site is a public research portfolio. The writing is intended to be read by macro investors, strategists, and recruiters who want to see how I frame a question, test it, and communicate the result.
+
+The current flagship note is the [BTP-Schatz convergence study](/research/rates/btp-schatz-convergence/), which shows the fixed-income side of the process. The broader direction is cross-asset macro.
 
 ## Contact
 

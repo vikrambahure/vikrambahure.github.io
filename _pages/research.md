@@ -4,7 +4,7 @@ title: "Research"
 permalink: /research/
 ---
 
-My research focus is rates, macro, and cross-asset strategy. The objective is to translate economic structure into tradeable hypotheses, test them with enough discipline to reject weak ideas, and write the result clearly.
+My research focus is cross-asset macro strategy: rates, FX, commodities, equity indices, volatility, and the macro transmission channels that connect them. The objective is to translate economic structure into tradeable hypotheses, test them with enough discipline to reject weak ideas, and write the result clearly.
 
 ## Flagship Note
 
@@ -14,17 +14,21 @@ A Johansen-based mean-reversion study of Italian and German 2Y yields. The note 
 
 ## Research Themes
 
-**Rates relative value**
+**Rates and inflation**
 
 Cointegration, error-correction models, Kalman hedge ratios, PCA common-factor residuals, and curve relationships across G3 government bond markets.
 
-**UK macro and rates**
+**FX and external balances**
 
-Inflation scenario analysis, gilt-curve level/slope/curvature factors, SONIA-implied policy-path gaps, and breakeven analysis.
+Macro factor signals, walk-forward validation, dollar cycles, INR-linked transmission, and external-balance pressure.
 
-**Cross-asset macro**
+**Commodities and inflation transmission**
 
-FX factor signals, equity-index options, volatility regime filters, and India macro-market transmission.
+Energy benchmarks, oil and gas supply chains, terms-of-trade shocks, and their pass-through into inflation and policy.
+
+**Equity indices and volatility**
+
+Index-options signals, volatility-regime filters, dealer gamma exposure, and expiry-pinning behaviour.
 
 ## Method
 
