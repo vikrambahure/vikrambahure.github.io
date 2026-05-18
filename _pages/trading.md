@@ -1,32 +1,28 @@
 ---
 layout: single
-title: "Trading & Markets"
+title: "Markets"
 permalink: /trading/
 author_profile: true
 ---
 
-Markets commentary, macro analysis, and trading ideas — written as independent opinion, not financial advice.
+This page collects markets work that sits between macro research and trading implementation.
 
-## Paid Newsletter
+The emphasis is on process: hypothesis, data, model choice, backtest, execution assumptions, and what would make the idea wrong.
 
-Detailed trade ideas, positioning notes, and markets commentary are published via a dedicated paid newsletter.
+## Current Work
 
-**What subscribers get:**
-- Weekly macro and markets briefing
-- Specific trade ideas with rationale, entry levels, and risk parameters
-- Thematic deep-dives on geopolitics × markets intersections
-- Direct, unfiltered opinion — not consensus
+**Rates RV**
 
-[**Subscribe on Substack →**](#){: .btn .btn--primary}
+Italy-Germany front-end convergence, G3 rates screens, Johansen cointegration, ECM signals, Kalman hedge ratios, and PCA residuals.
 
-*Placeholder — link will be updated when the Substack is live.*
+**FX**
 
----
+Factor walk-forward work on major and EM-linked pairs, with attention to macro drivers rather than purely technical signals.
 
-## Free Previews
+**Equity options**
 
-Selected pieces are published openly on [Opinion](/opinion/) and [Notes](/notes/).
+Nifty options research using volatility-regime filters, probability-of-profit adjustments, dealer gamma exposure, and expiry-pinning signals.
 
----
+## What This Is Not
 
-*All content is personal opinion only. Nothing published here constitutes financial advice or a regulated investment recommendation. Do your own research.*
+Nothing here is investment advice or a regulated recommendation. The purpose is to show research judgement: how ideas are formed, tested, rejected, and improved.

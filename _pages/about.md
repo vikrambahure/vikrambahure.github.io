@@ -1,32 +1,33 @@
 ---
 layout: single
-title: "About"
+title: "Profile"
 permalink: /about/
 ---
 
-I am an economist. I build quantitative economic models for clients who need rigorous analysis to inform strategy, policy, and investment decisions.
+I am a consulting economist in London, targeting rates and macro research roles on the buy side and sell side.
 
----
+My background combines three things that are rarely found together: formal economics training, client-facing macro scenario work, and a personal cross-asset research stack with live execution.
 
-**Consulting**
+## Core Profile
 
-**Economic Impact Assessment**
-Bottom-up and top-down modelling of the economic footprint of investments, infrastructure, and programmes. Work spans city and regional growth analysis (GVA, employment, scenario modelling), national-level assessments, and sector-specific impact studies across creative industries, defence, manufacturing, and data infrastructure.
+**Economics and finance training.** PhD Economics from the University of Geneva and MPhil Finance from Bocconi.
 
-**AI Economics**
-Modelling the economic impact of AI adoption for technology clients. This includes labour market analysis using task-based frameworks (which tasks AI augments or displaces), productivity and time-savings estimation, and sectoral impact modelling across manufacturing, healthcare, and professional services. Recent work includes large-scale AI opportunity assessments across national economies.
+**Applied macro and scenario work.** At Public First, I work on quantitative economic analysis for global technology and policy clients, including scenario modelling, impact assessment, and applied econometric work.
 
-**Industrial Organisation**
-Market structure analysis, competitive dynamics, and sectoral modelling. Applied to defence companies, technology platforms, and regulated industries.
+**Markets research stack.** Independently, I build and test rates relative-value, FX, equity-volatility, and macro signal frameworks. The work is designed to be reproducible, cost-aware, and honest about null results.
 
-My analytical foundation is in applied econometrics and causal inference, built through a PhD in Economics at the University of Geneva.
+## Portfolio Purpose
 
-I also produce technical writing — translating complex modelling into clear, decision-ready reports for executive and policy audiences.
+This site is not a general blog. It is a public portfolio for macro and rates research.
 
----
+The main evidence is the writing: a dated research note, a clear hypothesis, transparent methodology, backtest results, limitations, and enough technical detail for a strategist or portfolio manager to judge the work.
 
-**Writing**
+## Current Research Focus
 
-I write on markets, geopolitics, and the economics underlying events that matter. This includes financial and macro analysis — time series, VAR/VECM, and capital markets — alongside geopolitics and development economics. The posts here apply the same rigour as the consulting work, to the stories worth telling.
+- European rates relative value: Italy-Germany front-end convergence, Johansen cointegration, ECM signals, and regime stability.
+- UK macro and rates: inflation scenarios, gilt-curve factors, SONIA policy-path deviations, and breakeven analysis.
+- Cross-asset macro: FX factor signals, index options, volatility regime filters, and India macro-market links.
 
-For consulting enquiries: [economics.vikram@gmail.com](mailto:economics.vikram@gmail.com)
+## Contact
+
+[economics.vikram@gmail.com](mailto:economics.vikram@gmail.com)

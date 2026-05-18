@@ -7,14 +7,14 @@ layout: default
   <div class="hero-bg"></div>
   <div class="hero-line"></div>
   <div class="hero-inner">
-    <div class="hero-tag">Economic Consultant &nbsp;·&nbsp; London</div>
+    <div class="hero-tag">Rates / Macro Research &nbsp;&middot;&nbsp; London</div>
     <h1 class="hero-title">Vikram<br><em>Bahure</em></h1>
     <p class="hero-bio">
-      Economist working at the intersection of quantitative research, policy analysis, and applied consulting — writing on markets, geopolitics, and the economics underneath events that move the world.
+      Consulting economist with a PhD in Economics, an MPhil in Finance, and an independent cross-asset research stack. Focused on rates relative value, macro strategy, and empirical work a buy-side reader can interrogate.
     </p>
     <div class="hero-ctas">
-      <a href="/writing/" class="btn btn-primary">Read the writing</a>
-      <a href="/consulting/" class="btn btn-ghost">Consulting work</a>
+      <a href="/research/rates/btp-schatz-convergence/" class="btn btn-primary">Read the BTP-Schatz note</a>
+      <a href="/about/" class="btn btn-ghost">Profile</a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -26,8 +26,8 @@ layout: default
 <!-- WRITING -->
 <section class="page-section" id="writing">
   <div class="section-inner">
-    <div class="section-label">Writing</div>
-    <h2>Ideas worth thinking through</h2>
+    <div class="section-label">Research</div>
+    <h2>Macro research with a tradeable question</h2>
 
     <div class="writing-grid">
       {% assign featured = site.posts.first %}
@@ -35,7 +35,7 @@ layout: default
       <a href="{{ featured.url | relative_url }}" class="post-card featured">
         <div>
           <div class="featured-badge">Latest</div>
-          <div class="post-tag">{{ featured.categories | join: ' &nbsp;·&nbsp; ' }} &nbsp;·&nbsp; {{ featured.date | date: "%B %-d, %Y" }}</div>
+          <div class="post-tag">{{ featured.categories | join: ' &nbsp;&middot;&nbsp; ' }} &nbsp;&middot;&nbsp; {{ featured.date | date: "%B %-d, %Y" }}</div>
           <div class="post-title-text">{{ featured.title }}</div>
           <div class="post-excerpt-text">{{ featured.excerpt | strip_html | truncate: 200 }}</div>
         </div>
@@ -45,7 +45,7 @@ layout: default
       {% for post in site.posts offset:1 limit:3 %}
       <a href="{{ post.url | relative_url }}" class="post-card">
         <div>
-          <div class="post-tag">{{ post.categories | first }} &nbsp;·&nbsp; {{ post.date | date: "%B %-d, %Y" }}</div>
+          <div class="post-tag">{{ post.categories | first }} &nbsp;&middot;&nbsp; {{ post.date | date: "%B %-d, %Y" }}</div>
           <div class="post-title-text">{{ post.title }}</div>
           <div class="post-excerpt-text">{{ post.excerpt | strip_html | truncate: 140 }}</div>
         </div>
@@ -56,41 +56,41 @@ layout: default
 
     {% if site.posts.size > 4 %}
     <div style="margin-top: 32px;">
-      <a href="/writing/" style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);">All writing →</a>
+      <a href="/writing/" style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);">All writing -></a>
     </div>
     {% endif %}
   </div>
 </section>
 
-<!-- CONSULTING -->
-<section class="page-section" id="consulting">
+<!-- PROFILE -->
+<section class="page-section" id="profile">
   <div class="section-inner">
-    <div class="section-label">Work</div>
-    <h2>Consulting &amp; Research</h2>
-    <p class="consulting-intro" style="font-size:17px; color:var(--ink2); font-weight:300; max-width:560px; margin-bottom:56px; line-height:1.75;">
-      Quantitative economic analysis, impact assessment, and research design for technology, defence, and public sector clients.
+    <div class="section-label">Profile</div>
+    <h2>Economist, strategist toolkit</h2>
+    <p class="consulting-intro" style="font-size:17px; color:var(--ink2); font-weight:300; max-width:620px; margin-bottom:56px; line-height:1.75;">
+      PhD Economics and MPhil Finance, with client-facing macro scenario work and an independent markets stack spanning rates RV, FX, equity options, and UK macro.
     </p>
 
     <div class="services-grid">
       <div class="service-card">
         <div class="service-num">01</div>
-        <div class="service-title">Economic Impact Assessment</div>
-        <div class="service-desc">Bottom-up and top-down modelling of the economic footprint of investments, infrastructure, and programmes — city, sectoral, and national level.</div>
+        <div class="service-title">Macro Scenario Work</div>
+        <div class="service-desc">Applied VAR / VECM, scenario analysis, and decision-focused economic modelling for clients facing macro and sector shocks.</div>
       </div>
       <div class="service-card">
         <div class="service-num">02</div>
-        <div class="service-title">AI &amp; Technology Economics</div>
-        <div class="service-desc">Modelling the economic impact of AI adoption — labour market, productivity, time-savings, and sectoral effects across manufacturing, health, and professional services.</div>
+        <div class="service-title">Rates Relative Value</div>
+        <div class="service-desc">Cointegration, ECM, Kalman hedge ratios, PCA residuals, curve relationships, and regime checks across government bond markets.</div>
       </div>
       <div class="service-card">
         <div class="service-num">03</div>
-        <div class="service-title">Industrial Organisation</div>
-        <div class="service-desc">Market structure analysis, competitive dynamics, and sectoral modelling for technology platforms, defence companies, and regulated industries.</div>
+        <div class="service-title">Cross-Asset Execution</div>
+        <div class="service-desc">Independent research stack covering FX, equity-index options, volatility regimes, and broker-connected live signal workflows.</div>
       </div>
     </div>
 
     <div style="margin-top:32px;">
-      <a href="/consulting/" style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);">Full consulting profile →</a>
+      <a href="/about/" style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);">Full profile -></a>
     </div>
   </div>
 </section>
@@ -102,7 +102,7 @@ layout: default
     <div class="contact-layout">
       <div>
         <h2>Get in touch</h2>
-        <p class="contact-text">For consulting enquiries, research collaboration, or to discuss an interesting idea.</p>
+        <p class="contact-text">For macro research roles, buy-side recruiter conversations, or research collaboration.</p>
         <div class="contact-links">
           <a href="mailto:{{ site.author.email }}" class="contact-link">
             <span class="contact-link-label">Email</span>
@@ -110,14 +110,14 @@ layout: default
           </a>
           <a href="/writing/" class="contact-link">
             <span class="contact-link-label">Writing</span>
-            Markets, geopolitics &amp; applied economics
+            Rates, macro &amp; cross-asset research
           </a>
         </div>
       </div>
       <div class="currently">
         <div class="currently-title">Currently</div>
-        <div class="currently-item"><div class="currently-dot"></div><div>Economic consulting — AI economics, impact modelling, IO</div></div>
-        <div class="currently-item"><div class="currently-dot"></div><div>Writing on markets, geopolitics &amp; applied economics</div></div>
+        <div class="currently-item"><div class="currently-dot"></div><div>Consulting economist at Public First</div></div>
+        <div class="currently-item"><div class="currently-dot"></div><div>Building rates / macro research for buy-side and strategist roles</div></div>
         <div class="currently-item"><div class="currently-dot"></div><div>Based in London</div></div>
       </div>
     </div>

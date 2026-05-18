@@ -5,30 +5,30 @@ permalink: /consulting/
 author_profile: true
 ---
 
-I take on a small number of consulting engagements alongside my main work. My focus is quantitative economic modelling — building rigorous analysis that informs decisions.
+I work as a consulting economist on quantitative economic analysis, scenario modelling, and impact assessment.
 
-## What I Do
+For a markets reader, this matters because the consulting work is the other half of the profile: it is where the macro narrative, client communication, and decision-focused writing were built.
 
-**Economic Impact Assessment**
-Bottom-up and top-down modelling of the economic footprint of investments, infrastructure, and programmes — at city, sectoral, and national level.
+## Relevant Work
 
-**Industrial Organisation & Sectoral Modelling**
-Market structure analysis, competitive dynamics, and sector-level economic assessment.
+**Scenario analysis**
 
-**Technology & Platform Economics**
-Economic modelling for technology clients — market contribution, AI impact, productivity, and sectoral effects.
+Applied macro and sector scenarios for clients who need to understand how shocks transmit through economies, sectors, and firms.
 
-**Quantitative Analysis**
-Applied quantitative work for clients who need structured, evidence-based answers. Sectors include defence, public sector, and technology.
+**Economic impact modelling**
 
----
+Bottom-up and top-down modelling of investment, infrastructure, technology adoption, and policy effects.
 
-## Approach
+**AI and technology economics**
 
-Analysis should be precise, honest about uncertainty, and written so a decision-maker can act on it. I take on limited engagements and work directly — no layers.
+Labour-market, productivity, and sectoral analysis for technology clients, including AI adoption and data-infrastructure questions.
 
----
+**Industrial organisation**
 
-## Enquiries
+Market structure, competitive dynamics, and sector-level economic assessment.
 
-[economics.vikram@gmail.com](mailto:economics.vikram@gmail.com)
+## How It Connects To Markets
+
+The same habits matter in both settings: define the question cleanly, choose a model that fits the decision, explain uncertainty, and write so the reader can act.
+
+[Contact me](mailto:economics.vikram@gmail.com)
