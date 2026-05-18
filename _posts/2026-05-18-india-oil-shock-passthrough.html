@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>India Oil-Shock Pass-Through: A Leontief Cascade View for a Hormuz Closure</title>
+<style>
+@page { size: A4; margin: 2cm; }
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 0 1.25em;
+  line-height: 1.55;
+  color: #1f1f1f;
+}
+h1, h2, h3, h4 {
+  font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+  color: #111;
+  page-break-after: avoid;
+}
+h1 { font-size: 1.65em; border-bottom: 1px solid #ddd; padding-bottom: 0.3em; margin-top: 0.5em; }
+h2 { font-size: 1.25em; margin-top: 1.9em; }
+h3 { font-size: 1.05em; margin-top: 1.4em; }
+p { margin: 0.7em 0; }
+ul, ol { padding-left: 1.4em; }
+li { margin: 0.25em 0; }
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.92em;
+  width: 100%;
+  page-break-inside: avoid;
+}
+th, td { border: 1px solid #ccc; padding: 0.4em 0.7em; text-align: left; vertical-align: top; }
+th { background: #f4f4f4; font-weight: 600; }
+img { max-width: 100%; height: auto; display: block; margin: 1em auto; page-break-inside: avoid; }
+figure { margin: 1em 0; }
+figcaption { font-size: 0.9em; color: #555; text-align: center; }
+code, pre { font-family: 'Fira Code', Consolas, 'Liberation Mono', monospace; background: #f6f6f6; }
+code { padding: 0.05em 0.3em; border-radius: 3px; font-size: 0.92em; }
+pre { padding: 0.8em 1em; overflow-x: auto; border-radius: 4px; line-height: 1.45; font-size: 0.88em; page-break-inside: avoid; }
+hr { border: 0; border-top: 1px solid #ccc; margin: 2em 0; }
+blockquote { border-left: 3px solid #ccc; margin: 1em 0; padding-left: 1em; color: #555; }
+strong { color: #111; }
+a { color: #1a4d8f; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1 id="india-oil-shock-pass-through">India Oil-Shock Pass-Through</h1>
+<p><strong>A Leontief Cascade View for a Hormuz Closure</strong></p>
+<p>Vikram Bahure  ·  18 May 2026</p>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<ul>
+<li>
+<p><strong>View.</strong> Two cross-asset calls for an Indian buy-side book under a Hormuz-closure scenario. <strong>Underweight INR vs USD</strong>: each $10/bbl on Brent widens India's current-account deficit by roughly 0.4% of GDP, with the oil-import bill running $2-4bn/month above pre-war levels. <strong>Underweight Indian crude-derivative downstream</strong>: fertilisers, synthetic textiles, specialty chemicals, and aviation, where total Leontief multipliers run 1.18-1.44 and input-cost lift sits in the 10-24% range.</p>
+</li>
+<li>
+<p><strong>Methodology.</strong> Standard price-Leontief pass-through on the ADB Multi-Region Input-Output table (India, 35-sector). Sector price changes are computed as <code>ΔP = (I - A')&#8315;&#185; · s_crude · Δp_crude</code>, where <code>A</code> is the matrix of technical coefficients, <code>s_crude</code> is each sector's direct crude input share, and <code>Δp_crude</code> is the Brent shock. The Leontief inverse captures direct plus all rounds of indirect intermediate-input price propagation; the current-account impact is sized via standard oil-import elasticity.</p>
+</li>
+<li>
+<p><strong>Headline result.</strong> Brent settling at <strong>$90-100/bbl</strong> (from a $67 pre-war floor) drives total IO multipliers of <strong>1.44 (Fertilisers)</strong>, <strong>1.38 (Synthetic Textiles)</strong>, <strong>1.35 (Specialty Chemicals)</strong>, <strong>1.18 (Aviation)</strong>. Pass-through into sector input costs runs from <strong>+14% (Aviation op cost)</strong> to <strong>+24% (Fertilisers, $100/bbl)</strong>. The current-account deficit widens by roughly <strong>1% of GDP</strong>.</p>
+</li>
+<li>
+<p><strong>Sector dispersion.</strong> The shock travels through two distinct channels. <strong>Direct</strong>: naphtha and ATF are crude derivatives, so Fertilisers and Aviation absorb the move within one quarter. <strong>Indirect</strong>: petrochemical feedstock propagates through intermediate-input chains into Synthetic Textiles and Specialty Chemicals over 1-3 quarters, with pricing-power asymmetry determining who passes through to consumers and who absorbs into margin.</p>
+</li>
+<li>
+<p><strong>The honest gap.</strong> Cost-push only. There is no FX-feedback channel into CPI pass-through, no demand-side macro model, and no second-round wage-price interaction. The rates leg is deliberately omitted (Indian government bond liquidity is outside my current working set). Sector coverage is limited to the four with computed Leontief multipliers in the underlying analysis; no overweight recommendations are offered because computing multipliers for the "oil-light" beneficiaries (IT services, private banks) is scoped but not yet executed. Magnitudes are taken from a single-vintage ADB MRIO table without rolling robustness checks.</p>
+</li>
+</ul>
+<figure>
+<table>
+<thead>
+<tr>
+<th>Sector</th>
+<th>Direct IO coeff</th>
+<th>Indirect IO effect</th>
+<th>Total multiplier</th>
+<th>At $90/bbl (+34% crude)</th>
+<th>At $100/bbl (+49% crude)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fertilisers</strong></td>
+<td>0.62</td>
+<td>0.09</td>
+<td><strong>1.44</strong></td>
+<td>+16% input cost</td>
+<td>+24% input cost</td>
+</tr>
+<tr>
+<td><strong>Synthetic Textiles</strong></td>
+<td>0.48</td>
+<td>0.08</td>
+<td><strong>1.38</strong></td>
+<td>+12% input cost</td>
+<td>+18% input cost</td>
+</tr>
+<tr>
+<td><strong>Specialty Chemicals</strong></td>
+<td>0.40</td>
+<td>0.07</td>
+<td><strong>1.35</strong></td>
+<td>+10% input cost</td>
+<td>+15% input cost</td>
+</tr>
+<tr>
+<td><strong>Aviation (ATF)</strong></td>
+<td>0.38</td>
+<td>0.04</td>
+<td><strong>1.18</strong></td>
+<td>+14% op cost</td>
+<td>+20% op cost</td>
+</tr>
+</tbody>
+</table>
+<figcaption>Price pass-through by sector — direct + indirect IO linkages. Total multiplier = Leontief inverse. Pass-through = multiplier × direct coefficient × crude Δ%. Estimated input-cost increase vs pre-war $67/bbl. Source: author, ADB MRIO India 35-sector IO.</figcaption>
+</figure>
+<hr />
+</body>
+</html>
