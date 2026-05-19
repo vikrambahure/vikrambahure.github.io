@@ -1,8 +1,7 @@
 """
 Minimal input-output pass-through research sample.
 
-This mirrors the structure of a private oil-shock workflow without private
-data or full project internals:
+This is a compact public sample of an oil-shock pass-through workflow:
 1. validate an input-output coefficient matrix,
 2. compute the Leontief inverse,
 3. apply crude-price scenarios,

@@ -34,7 +34,7 @@ def make_synthetic_india_io() -> tuple[pd.DataFrame, pd.Series]:
         "Specialty chemicals",
         "Aviation",
         "IT services",
-        "Private banks",
+        "Banks",
     ]
 
     a_matrix = pd.DataFrame(
@@ -57,7 +57,7 @@ def make_synthetic_india_io() -> tuple[pd.DataFrame, pd.Series]:
             "Specialty chemicals": 0.40,
             "Aviation": 0.38,
             "IT services": 0.03,
-            "Private banks": 0.02,
+            "Banks": 0.02,
         }
     )
 

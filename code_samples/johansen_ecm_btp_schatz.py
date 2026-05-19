@@ -1,7 +1,7 @@
 """
 Minimal rates relative-value research sample.
 
-This mirrors the structure of a private research workflow without private data:
+This is a compact public sample of a rates relative-value workflow:
 1. validate two yield series,
 2. estimate Johansen cointegration,
 3. construct a residual,

@@ -1,16 +1,8 @@
 # Public Python Code Samples
 
-This folder contains short, recruiter-readable extracts that mirror the style of the private `chokepointmacro` research stack without exposing private data, credentials, broker code, or full project internals.
+These are public Python samples for viewing. They show the structure of the analysis code behind two research workflows, using simplified examples and synthetic data.
 
-Important: these samples do not reproduce the published research-note results. The blog results use private data, private run artefacts, and the fuller private research pipeline. The public files are intentionally small review samples.
-
-The samples are intended to show:
-
-- clean research functions,
-- explicit assumptions,
-- reproducible analysis flow,
-- no hidden state,
-- code that can be reviewed quickly.
+The samples are not intended to reproduce the published research-note results. The research notes use fuller datasets and a broader analysis pipeline. These files are only a compact view of implementation style.
 
 ## Files
 
