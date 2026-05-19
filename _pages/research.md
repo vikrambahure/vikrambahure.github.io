@@ -12,6 +12,14 @@ My research focus is cross-asset macro strategy: rates, FX, commodities, equity 
 
 A Johansen-based mean-reversion study of Italian and German 2Y yields. The note covers the motivation, cointegration screen, ECM trading rule, backtest results, regime stability, and remaining limitations.
 
+**[India Oil-Shock Pass-Through](/research/macro/india-oil-shock-passthrough/)**
+
+A cross-asset macro note on how a Hormuz-driven oil shock transmits into India's current account, INR risk, and crude-sensitive downstream sectors.
+
+## Code
+
+Short public Python samples are available on the [Code](/code/) page. They mirror the style of the private research stack without exposing private data or broker integrations.
+
 ## Research Themes
 
 **Rates and inflation**

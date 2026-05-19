@@ -38,4 +38,7 @@ The current flagship note is the [BTP-Schatz convergence study](/research/rates/
 
 ## Contact
 
-[economics.vikram@gmail.com](mailto:economics.vikram@gmail.com)
+- [CV](/CV.pdf)
+- [LinkedIn](https://www.linkedin.com/in/vikrambahure/)
+- [Python code samples](/code/)
+- [economics.vikram@gmail.com](mailto:economics.vikram@gmail.com)
