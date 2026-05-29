@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who is paying for AI?</title>
+<style>
+  :root { --ink:#1a1a1a; --muted:#666; --rule:#e3e3e3; --accent:#d55e00; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--ink); line-height: 1.65; margin: 0;
+    background: #fafafa;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; background: #fff; }
+  .kicker { font-family: -apple-system, system-ui, sans-serif; text-transform: uppercase;
+    letter-spacing: .12em; font-size: 12px; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
+  h1 { font-size: 2.35rem; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.01em; }
+  .dek { font-size: 1.2rem; color: var(--muted); font-style: italic; margin: 0 0 28px; }
+  .byline { font-family: -apple-system, system-ui, sans-serif; font-size: 13px; color: var(--muted);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 12px 0; margin-bottom: 36px; }
+  h2 { font-size: 1.5rem; margin: 40px 0 14px; letter-spacing: -0.01em; }
+  p { margin: 0 0 20px; font-size: 1.12rem; }
+  figure { margin: 32px 0; }
+  figure img { width: 100%; height: auto; display: block; }
+  figcaption { font-family: -apple-system, system-ui, sans-serif; font-size: 13px; color: var(--muted);
+    margin-top: 8px; text-align: center; }
+  .source { font-family: -apple-system, system-ui, sans-serif; font-size: 13px; color: var(--muted);
+    border-top: 1px solid var(--rule); margin-top: 44px; padding-top: 18px; line-height: 1.55; }
+  .next { background:#f4f4f2; border-left: 3px solid var(--accent); padding: 16px 20px; margin: 36px 0 0;
+    font-size: 1.02rem; }
+  em, i { color: inherit; }
+</style>
+</head>
+<body>
+<article class="wrap">
+
+  <div class="kicker">The economics of the AI boom</div>
+  <h1>Who is paying for AI?</h1>
+  <p class="dek">The build-out has quietly shifted from cash to credit, and the credit is increasingly hard to see through.</p>
+  <div class="byline">Vikram Bahure &middot; 29 May 2026</div>
+
+  <p>The companies building artificial intelligence have started to borrow to pay for it. For most of the past decade the five big hyperscalers funded their data-centre spending entirely from operating cash flow, which ran well ahead of what they invested. In 2026 that reverses: capital spending will roughly equal operating cash flow, up from about 40% a decade ago (Apollo/FactSet), on a reported bill of about $646bn. Once a company spends all the cash it generates, anything more must come from outside. The question is no longer how much cash Big Tech throws off. It is who is lending it the difference, and how sound that lending is.</p>
+
+  <h2>How big, and who is paying now</h2>
+
+  <p>The 2026 build-out costs about $786bn, and internal cash now covers only around 60% of it. The rest is borrowed: roughly $175bn (22%) in on-balance-sheet corporate bonds (Bank of America's 2026 forecast) and about $140bn (18%) through off-balance-sheet vehicles and private credit. The cash/debt/off-balance split is an estimate; the capex total and the bond issuance are not. As recently as 2023, internal cash funded essentially the entire build.</p>
+
+  <figure>
+    <img src="plots/ai-funding-mix.png" alt="Stacked bars showing the AI funding mix from 2020 to 2026, in absolute dollars and as shares.">
+    <figcaption>The internal-cash share of the build falls from ~100% to ~60% in three years.</figcaption>
+  </figure>
+
+  <p>The chart makes the shift concrete. The internal-cash share falls from about 100% to about 60% in three years, while on-balance-sheet debt and then private credit open up beneath it.</p>
+
+  <p>The reported capex figure understates the true build. The widely-quoted $646bn excludes data centres financed off the hyperscalers' own balance sheets. Meta's $27bn Hyperion campus in Louisiana is the clean example: it sits in a joint venture with the asset manager Blue Owl, the debt belongs to the vehicle, the asset is leased back, and none of it lands on Meta's capex line. Include that off-balance-sheet financing and the 2026 build rises to about $786bn, roughly a fifth above the headline.</p>
+
+  <p>The funding base has therefore changed. AI capex has gone from a cash story to a debt story, and a growing share of that debt sits off the balance sheet.</p>
+
+  <h2>How good is the borrowing?</h2>
+
+  <p>Borrowing is not in itself a problem; the hyperscalers hold among the strongest balance sheets in the world. The question is the quality of the debt, and the picture is mixed.</p>
+
+  <p>The reassuring part comes first. Of the roughly $315bn borrowed in 2026, about $150bn (48%) is rated investment grade and only about $25bn (8%) is outright high-yield, or "junk" (these tier amounts are estimates anchored to issuance data). The genuinely distressed borrowers are small. CoreWeave, a "neocloud" that rents out artificial-intelligence computing power, has a five-year credit-default-swap (CDS) spread of around 665 basis points, the price of insuring its debt, which implies roughly a 42% chance of default within five years; it carries under $30bn of debt. Weighted by dollars, junk is the thinnest slice.</p>
+
+  <figure>
+    <img src="plots/debt-by-quality-amount.png" alt="Horizontal bars sizing AI debt by credit-quality tier in dollars.">
+    <figcaption>Of the ~$315bn borrowed, junk is only ~$25bn; the largest block, ~$140bn, is unrated.</figcaption>
+  </figure>
+
+  <p>The real exposure is not junk but opacity. The largest single block of the borrowing, about $140bn (44%), carries no public credit rating at all. It is private credit and off-balance-sheet lending, which by construction never passes a ratings agency. Across the wider sector's external financing, Morgan Stanley estimates only about 13% is plain rated investment-grade corporate debt, while about 53% is unrated private credit. The hyperscalers themselves lean on rated bonds; the neoclouds supply most of the private-credit tilt.</p>
+
+  <figure>
+    <img src="plots/ai-debt-by-rating.png" alt="Left: hyperscaler credit-rating ladder. Right: external-financing mix by instrument.">
+    <figcaption>Four hyperscalers are pristine; Oracle is the lone BBB. Most external money is unrated, not rated investment-grade.</figcaption>
+  </figure>
+
+  <p>Among the rated names, one stands apart. Microsoft (AAA), Alphabet (AA+), Amazon (AA) and Meta (AA-) remain pristine. Oracle is the exception: rated BBB with a negative outlook, two notches above junk, and the most aggressive borrower of the five. The credit market has noticed. Oracle's five-year CDS spread rose from about 40 basis points at the start of 2025 to a record 198 basis points by April 2026.</p>
+
+  <figure>
+    <img src="plots/ai-debt-quality.png" alt="Left: Oracle's five-year CDS spread over time. Right: the AI-credit quality spectrum.">
+    <figcaption>Oracle's CDS climbed from ~40bp to a record ~198bp; CoreWeave sits far higher still.</figcaption>
+  </figure>
+
+  <p>So the debt is mostly sound, but increasingly hard to see through, and the one investment-grade name borrowing the most is the one the credit market trusts least.</p>
+
+  <h2>The circular twist</h2>
+
+  <p>One feature of this financing has no clean precedent: a large part of the demand that is supposed to service the debt is circular. Chip-makers and cloud providers invest in the artificial-intelligence firms that then turn around and buy their products. Analysts have counted more than $800bn of such arrangements.</p>
+
+  <figure>
+    <img src="plots/vendor-loop.png" alt="A schematic of the circular-financing loop and OpenAI's vendor commitments.">
+    <figcaption>Cash leaves a vendor as &ldquo;investment&rdquo; and can return as &ldquo;revenue.&rdquo; OpenAI has promised vendors ~$1.15tn.</figcaption>
+  </figure>
+
+  <p>OpenAI is the clearest case. It has committed roughly $1.15tn to vendors over the next decade: about $350bn to Broadcom, $300bn to Oracle, $250bn to Microsoft, and smaller sums to Nvidia, Advanced Micro Devices (AMD) and Amazon. It has also raised more than $170bn of equity, much of it from those same vendors, including $30bn from Nvidia and $50bn from Amazon. And it is projected to lose about $14bn in 2026. Cash that leaves Nvidia as an "investment" can return as "revenue" once OpenAI spends it on computing power that runs on Nvidia chips.</p>
+
+  <p>This matters for the debt because the cash flows meant to repay it are partly self-referential. If reported demand is inflated by vendors financing their own customers, the revenue behind the loans is softer than it looks. The loop is already showing strain: in March 2026 Nvidia's chief executive said the firm's mooted $100bn investment in OpenAI was "not in the cards", after putting in $30bn.</p>
+
+  <p>So the demand underpinning the borrowing is not fully independent of the lenders, which makes both the demand and the credit harder to trust.</p>
+
+  <h2>What it changes, and what comes next</h2>
+
+  <p>None of this is a prediction of collapse. The hyperscalers can afford their bets, the investment-grade debt is genuinely investment grade, and an infrastructure build is a reasonable thing to borrow against. But the character of the financing has changed in three specific ways, and each moves risk in the same direction.</p>
+
+  <p>The build is no longer paid for in cash: external finance now covers about 40% of it, against almost none three years ago. A growing share of that finance is invisible, either off the balance sheet or unrated, so reported leverage understates the true exposure. And part of the demand servicing the debt is circular, which makes the revenue behind it less reliable than the contracts imply. Individually, each is manageable. Together, they describe a build-out that is more leveraged, more opaque and more self-referential than the headline capital-spending figure suggests.</p>
+
+  <div class="next">
+    <p style="margin:0;">That leaves the most important question unanswered: whether any of it pays off. The financing only works if artificial intelligence eventually earns its keep, in productivity, in profits, in measurable economic return. The money going in has become easier to count and harder to trust. The money coming out is a separate question, with its own data, and it is where this series goes next.</p>
+  </div>
+
+  <p class="source">Sources and method: hyperscaler capex from Apollo/FactSet; debt issuance from Bank of America and the Bank for International Settlements; ratings from S&amp;P and Moody's; the external-financing mix from Morgan Stanley; circular-financing figures from Bloomberg and company disclosures. Funding-mix shares and debt-quality tiers for 2024&ndash;26 are author's estimates anchored to sourced issuance data; full derivations and caveats are documented in the project methodology notes.</p>
+
+</article>
+</body>
+</html>
