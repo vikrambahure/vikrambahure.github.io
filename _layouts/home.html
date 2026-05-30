@@ -2,25 +2,6 @@
 layout: default
 ---
 
-<!-- ABOUT -->
-<section class="section">
-  <div class="section-eyebrow">About</div>
-  <div class="about">
-    <div>
-      <p>I'm a consulting economist based in London. I hold a PhD in Economics from the University of Geneva and an MPhil in Finance, and I'm currently with Public First on economic-impact assessment, AI economics, and sectoral modelling.</p>
-      <p>Independently, I write on cross-asset macro &mdash; rates, FX, commodities, and volatility &mdash; with a focus on macroeconomic transmission and tradeable questions.</p>
-    </div>
-    <aside class="credentials">
-      <dl>
-        <div><dt>Doctorate</dt><dd>PhD, Economics &middot; University of Geneva</dd></div>
-        <div><dt>Now</dt><dd>Consulting Economist, Public First</dd></div>
-        <div><dt>Focus</dt><dd>AI economics &middot; Impact assessment &middot; Cross-asset macro</dd></div>
-        <div><dt>Location</dt><dd>{{ site.author.location }}</dd></div>
-      </dl>
-    </aside>
-  </div>
-</section>
-
 <!-- LATEST -->
 {% assign latest = site.posts.first %}
 {% if latest %}
@@ -52,6 +33,3 @@ layout: default
 </section>
 {% endif %}
 
-<p class="availability">
-  Available for selected consulting briefs &mdash; <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-</p>
