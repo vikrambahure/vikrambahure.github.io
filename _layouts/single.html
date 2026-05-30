@@ -2,24 +2,16 @@
 layout: default
 ---
 
-<div style="max-width:900px; margin:0 auto; padding:0 48px;">
-  <div class="page-header" style="padding:140px 0 60px; border-bottom:1px solid var(--rule);">
-    {% if page.categories %}
-    <div class="page-kicker">{{ page.categories | first }}</div>
-    {% endif %}
-    <h1>{{ page.title }}</h1>
-    {% if page.description %}
-    <p class="page-lead">{{ page.description }}</p>
-    {% endif %}
-  </div>
-</div>
-
-<div class="page-body">
-  {% if page.date %}
-  <div class="post-byline">
-    {{ page.date | date: "%B %-d, %Y" }}
-    &nbsp;·&nbsp; {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read
-  </div>
+<header class="page-header">
+  {% if page.categories %}
+  <div class="page-kicker">{{ page.categories | first }}</div>
   {% endif %}
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}
+  <p class="page-lead">{{ page.description }}</p>
+  {% endif %}
+</header>
+
+<article class="content">
   {{ content }}
-</div>
+</article>

@@ -1,300 +1,57 @@
 ---
+layout: default
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ site.author.name }} &mdash; Economist, London</title>
-<meta name="description" content="{{ site.description }}">
-{% seo %}
-{% feed_meta %}
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XW6DTP3L7H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XW6DTP3L7H');
-</script>
-<style>
-  :root {
-    --paper: #fff1e5;
-    --ink: #1a1a1a;
-    --muted: #555;
-    --rule-soft: #d6c7b3;
-    --accent: #990f3d;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 18px;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; text-decoration: none; }
-  a:hover { color: var(--accent); }
 
-  .page { max-width: 1100px; margin: 0 auto; padding: 28px 32px 80px; }
-
-  /* HEAD */
-  .nameblock {
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 18px;
-    margin-top: 22px;
-  }
-  .nameblock h1 {
-    font-family: Georgia, serif;
-    font-size: 56px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin: 0 0 10px;
-    font-weight: 700;
-  }
-  .nameblock .role {
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: .2em;
-    color: var(--muted);
-  }
-  .nameblock .role .dot { color: var(--accent); margin: 0 6px; }
-
-  .topnav {
-    display: flex;
-    gap: 28px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--rule-soft);
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    flex-wrap: wrap;
-  }
-  .topnav .spacer { flex: 1; }
-  .topnav a.cta {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 6px 12px;
-    border: 1px solid var(--ink);
-  }
-  .topnav a.cta:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
-
-  /* SECTIONS */
-  .section { padding: 40px 0 12px; }
-  .section + .section { border-top: 1px solid var(--rule-soft); }
-  .section-eyebrow {
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: .22em;
-    color: var(--accent);
-    font-weight: 700;
-    margin-bottom: 14px;
-  }
-
-  /* ABOUT */
-  .about {
-    display: grid;
-    grid-template-columns: 2.2fr 1fr;
-    gap: 40px;
-  }
-  .about p { font-size: 19px; line-height: 1.55; margin: 0 0 14px; max-width: 60ch; }
-  .about .credentials {
-    border-left: 3px solid var(--accent);
-    padding-left: 20px;
-    font-size: 15px;
-  }
-  .about .credentials dl { margin: 0; display: grid; grid-template-columns: 1fr; gap: 14px; }
-  .about .credentials dt {
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: .18em;
-    color: var(--muted);
-    margin-bottom: 2px;
-  }
-  .about .credentials dd { margin: 0; }
-
-  /* LATEST */
-  .latest h2 {
-    font-family: Georgia, serif;
-    font-size: 44px;
-    line-height: 1.08;
-    letter-spacing: -0.015em;
-    margin: 0 0 14px;
-  }
-  .latest h2 a { color: inherit; }
-  .latest h2 a:hover { color: var(--accent); }
-  .latest .dek { font-size: 21px; line-height: 1.4; font-style: italic; margin: 0 0 16px; }
-  .latest .byline {
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    color: var(--muted);
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--rule-soft);
-    padding: 8px 0;
-    margin-bottom: 18px;
-  }
-  .latest p { margin: 0 0 14px; max-width: 68ch; }
-  .latest .read-more {
-    display: inline-block;
-    margin-top: 6px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: .15em;
-    color: var(--accent);
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 2px;
-  }
-
-  /* WRITING GRID */
-  .writing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .writing-grid article { border-top: 1px solid var(--ink); padding-top: 14px; }
-  .writing-grid .cat {
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 6px;
-  }
-  .writing-grid h3 { font-family: Georgia, serif; font-size: 22px; line-height: 1.2; margin: 0 0 8px; }
-  .writing-grid h3 a { color: inherit; }
-  .writing-grid h3 a:hover { color: var(--accent); }
-  .writing-grid .ex { font-size: 15px; color: var(--muted); margin: 0 0 10px; line-height: 1.45; }
-  .writing-grid .date {
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted);
-  }
-
-  /* AVAILABILITY */
-  .availability {
-    margin: 44px 0 0;
-    font-style: italic;
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-  .availability a { color: var(--ink); border-bottom: 1px solid var(--accent); }
-  .availability a:hover { color: var(--accent); }
-
-  /* FOOTER */
-  footer.site {
-    margin-top: 60px;
-    border-top: 4px solid var(--ink);
-    padding-top: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    color: var(--muted);
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
-  }
-  footer.site .links a { margin-right: 18px; }
-
-  @media (max-width: 880px) {
-    .nameblock h1 { font-size: 40px; }
-    .about { grid-template-columns: 1fr; }
-    .writing-grid { grid-template-columns: 1fr; }
-    .latest h2 { font-size: 32px; }
-  }
-</style>
-</head>
-<body>
-<div class="page">
-
-  <!-- NAMEBLOCK -->
-  <div class="nameblock">
-    <h1>{{ site.author.name }}</h1>
-    <div class="role">Economist <span class="dot">&middot;</span> {{ site.author.location }} <span class="dot">&middot;</span> Cross-Asset Macro Research</div>
+<!-- ABOUT -->
+<section class="section">
+  <div class="section-eyebrow">About</div>
+  <div class="about">
+    <div>
+      <p>I'm a consulting economist based in London. I hold a PhD in Economics from the University of Geneva and an MPhil in Finance, and I'm currently with Public First on economic-impact assessment, AI economics, and sectoral modelling.</p>
+      <p>Independently, I write on cross-asset macro &mdash; rates, FX, commodities, and volatility &mdash; with a focus on macroeconomic transmission and tradeable questions.</p>
+    </div>
+    <aside class="credentials">
+      <dl>
+        <div><dt>Doctorate</dt><dd>PhD, Economics &middot; University of Geneva</dd></div>
+        <div><dt>Now</dt><dd>Consulting Economist, Public First</dd></div>
+        <div><dt>Focus</dt><dd>AI economics &middot; Impact assessment &middot; Cross-asset macro</dd></div>
+        <div><dt>Location</dt><dd>{{ site.author.location }}</dd></div>
+      </dl>
+    </aside>
   </div>
+</section>
 
-  <nav class="topnav">
-    <a href="/about/">About</a>
-    <a href="/consulting/">Consulting</a>
-    <a href="/writing/">Writing</a>
-    <a href="mailto:{{ site.author.email }}">Email</a>
-    <span class="spacer"></span>
-    <a href="{{ '/CV.pdf' | relative_url }}" class="cta">Curriculum Vitae &darr;</a>
-  </nav>
+<!-- LATEST -->
+{% assign latest = site.posts.first %}
+{% if latest %}
+{% assign latest_cats = latest.categories | where_exp: "c", "c != 'Research'" %}
+<section class="section latest">
+  <div class="section-eyebrow">Latest</div>
+  <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
+  <p class="dek">{{ latest.excerpt | strip_html | strip }}</p>
+  <div class="byline">By {{ site.author.name }} &nbsp;&middot;&nbsp; {{ latest.date | date: "%-d %B %Y" }}{% if latest_cats.size > 0 %} &nbsp;&middot;&nbsp; {{ latest_cats | join: " / " }}{% endif %}</div>
+  <a href="{{ latest.url | relative_url }}" class="read-more">Read the full piece &rarr;</a>
+</section>
+{% endif %}
 
-  <!-- ABOUT -->
-  <section class="section">
-    <div class="section-eyebrow">About</div>
-    <div class="about">
-      <div>
-        <p>I'm a consulting economist based in London. I hold a PhD in Economics from the University of Geneva and an MPhil in Finance, and I'm currently with Public First on economic-impact assessment, AI economics, and sectoral modelling.</p>
-        <p>Independently, I write on cross-asset macro &mdash; rates, FX, commodities, and volatility &mdash; with a focus on macroeconomic transmission and tradeable questions.</p>
-      </div>
-      <aside class="credentials">
-        <dl>
-          <div><dt>Doctorate</dt><dd>PhD, Economics &middot; University of Geneva</dd></div>
-          <div><dt>Now</dt><dd>Consulting Economist, Public First</dd></div>
-          <div><dt>Focus</dt><dd>AI economics &middot; Impact assessment &middot; Cross-asset macro</dd></div>
-          <div><dt>Location</dt><dd>{{ site.author.location }}</dd></div>
-        </dl>
-      </aside>
-    </div>
-  </section>
+<!-- SELECTED WRITING -->
+{% if site.posts.size > 1 %}
+<section class="section">
+  <div class="section-eyebrow">Selected writing</div>
+  <div class="writing-grid">
+    {% for post in site.posts offset:1 limit:3 %}
+    {% assign post_cats = post.categories | where_exp: "c", "c != 'Research'" %}
+    <article>
+      <div class="cat">{{ post_cats | join: " &middot; " }}</div>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="ex">{{ post.excerpt | strip_html | strip | truncate: 180 }}</p>
+      <div class="date">{{ post.date | date: "%-d %B %Y" }}</div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
-  <!-- LATEST -->
-  {% assign latest = site.posts.first %}
-  {% if latest %}
-  {% assign latest_cats = latest.categories | where_exp: "c", "c != 'Research'" %}
-  <section class="section latest">
-    <div class="section-eyebrow">Latest</div>
-    <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
-    <p class="dek">{{ latest.excerpt | strip_html | strip }}</p>
-    <div class="byline">By {{ site.author.name }} &nbsp;&middot;&nbsp; {{ latest.date | date: "%-d %B %Y" }}{% if latest_cats.size > 0 %} &nbsp;&middot;&nbsp; {{ latest_cats | join: " / " }}{% endif %}</div>
-    <a href="{{ latest.url | relative_url }}" class="read-more">Read the full piece &rarr;</a>
-  </section>
-  {% endif %}
-
-  <!-- SELECTED WRITING -->
-  {% if site.posts.size > 1 %}
-  <section class="section">
-    <div class="section-eyebrow">Selected writing</div>
-    <div class="writing-grid">
-      {% for post in site.posts offset:1 limit:3 %}
-      {% assign post_cats = post.categories | where_exp: "c", "c != 'Research'" %}
-      <article>
-        <div class="cat">{{ post_cats | join: " &middot; " }}</div>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="ex">{{ post.excerpt | strip_html | strip | truncate: 180 }}</p>
-        <div class="date">{{ post.date | date: "%-d %B %Y" }}</div>
-      </article>
-      {% endfor %}
-    </div>
-  </section>
-  {% endif %}
-
-  <!-- AVAILABILITY -->
-  <p class="availability">
-    Available for selected consulting briefs &mdash; <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-  </p>
-
-  <footer class="site">
-    <div>&copy; {{ site.author.name }} {{ site.time | date: "%Y" }} &nbsp;&middot;&nbsp; {{ site.author.location }}</div>
-    <div class="links">
-      <a href="{{ '/CV.pdf' | relative_url }}">CV</a>
-      <a href="mailto:{{ site.author.email }}">Email</a>
-      <a href="https://github.com/vikrambahure">GitHub</a>
-      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
-    </div>
-  </footer>
-
-</div>
-</body>
-</html>
+<p class="availability">
+  Available for selected consulting briefs &mdash; <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+</p>

@@ -2,40 +2,34 @@
 layout: default
 ---
 
-<div style="max-width:900px; margin:0 auto; padding:0 48px;">
-  <div class="page-header" style="padding:140px 0 60px; border-bottom:1px solid var(--rule);">
-    <div class="page-kicker">{{ page.title }}</div>
-    <h1>{% if page.category %}{{ page.category }}{% else %}All Writing{% endif %}</h1>
-  </div>
-</div>
+<header class="page-header">
+  <div class="page-kicker">{{ page.title }}</div>
+  <h1>{% if page.category %}{{ page.category }}{% else %}All Writing{% endif %}</h1>
+</header>
 
-<div class="page-body">
-  {% if page.category %}
-    {% assign posts = site.posts | where_exp: "post", "post.categories contains page.category" %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
+{% if page.category %}
+  {% assign posts = site.posts | where_exp: "post", "post.categories contains page.category" %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
 
-  {% if posts.size > 0 %}
-  <ul class="archive-list">
-    {% for post in posts %}
-    <li class="archive-item">
-      <div class="archive-meta">
-        <span class="archive-cat">{{ post.categories | first }}</span>
-        {{ post.date | date: "%B %-d, %Y" }}
-      </div>
-      <div class="archive-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </div>
-      {% if post.excerpt %}
-      <div class="archive-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</div>
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <p style="color:var(--ink3); font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.1em; padding:40px 0;">
-    No posts yet.
-  </p>
-  {% endif %}
-</div>
+{% if posts.size > 0 %}
+<ul class="archive-list">
+  {% for post in posts %}
+  <li class="archive-item">
+    <div class="archive-meta">
+      <span class="archive-cat">{{ post.categories | first }}</span>
+      {{ post.date | date: "%-d %B %Y" }}
+    </div>
+    <div class="archive-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </div>
+    {% if post.excerpt %}
+    <div class="archive-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</div>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p style="text-align:center; color:var(--muted); padding:40px 0;">No posts yet.</p>
+{% endif %}

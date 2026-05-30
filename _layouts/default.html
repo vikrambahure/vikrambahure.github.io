@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.author.name }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/editorial.css' | relative_url }}">
   {% seo %}
   {% feed_meta %}
   <!-- Google Analytics -->
@@ -21,30 +18,34 @@
   </script>
 </head>
 <body>
+<div class="page">
 
-<nav class="site-nav" id="nav">
-  <a href="/" class="nav-brand">{{ site.title }}</a>
-  <ul class="nav-links">
-    <li><a href="/about/">Profile</a></li>
-    <li><a href="/research/">Research</a></li>
-    <li><a href="/code/">Code</a></li>
-    <li><a href="/writing/">Writing</a></li>
-  </ul>
-</nav>
+  <header class="masthead">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+    <div class="role">Economist <span class="dot">&middot;</span> {{ site.author.location }} <span class="dot">&middot;</span> Cross-Asset Macro Research</div>
+  </header>
 
-{{ content }}
+  <nav class="topnav">
+    <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} class="active"{% endif %}>About</a>
+    <a href="{{ '/consulting/' | relative_url }}"{% if page.url contains '/consulting' %} class="active"{% endif %}>Consulting</a>
+    <a href="{{ '/writing/' | relative_url }}"{% if page.url contains '/writing' or page.url contains '/research' %} class="active"{% endif %}>Writing</a>
+    <a href="mailto:{{ site.author.email }}">Email</a>
+    <span class="spacer"></span>
+    <a href="{{ '/CV.pdf' | relative_url }}" class="cta">Curriculum Vitae &darr;</a>
+  </nav>
 
-<footer class="site-footer">
-  <span>{{ site.title }} &nbsp;·&nbsp; {{ site.author.location }}</span>
-  <span><a href="mailto:{{ site.author.email }}">Contact</a> &nbsp;·&nbsp; 2026</span>
-</footer>
+  {{ content }}
 
-<script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
-</script>
+  <footer class="site">
+    <div>&copy; {{ site.author.name }} {{ site.time | date: "%Y" }} &nbsp;&middot;&nbsp; {{ site.author.location }}</div>
+    <div class="links">
+      <a href="{{ '/CV.pdf' | relative_url }}">CV</a>
+      <a href="mailto:{{ site.author.email }}">Email</a>
+      <a href="https://github.com/vikrambahure">GitHub</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </div>
+  </footer>
 
+</div>
 </body>
 </html>
