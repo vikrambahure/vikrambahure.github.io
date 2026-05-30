@@ -1,29 +1,16 @@
----
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ site.author.name }} &mdash; Economist, London</title>
-<meta name="description" content="{{ site.description }}">
-{% seo %}
-{% feed_meta %}
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XW6DTP3L7H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XW6DTP3L7H');
-</script>
+<title>Vikram Bahure — Economist</title>
 <style>
   :root {
-    --paper: #fff1e5;
+    --paper: #fff1e5;          /* FT salmon */
     --ink: #1a1a1a;
     --muted: #555;
     --rule-soft: #d6c7b3;
-    --accent: #990f3d;
+    --accent: #990f3d;         /* FT claret */
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -127,8 +114,6 @@
     letter-spacing: -0.015em;
     margin: 0 0 14px;
   }
-  .latest h2 a { color: inherit; }
-  .latest h2 a:hover { color: var(--accent); }
   .latest .dek { font-size: 21px; line-height: 1.4; font-style: italic; margin: 0 0 16px; }
   .latest .byline {
     font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
@@ -171,8 +156,6 @@
     margin-bottom: 6px;
   }
   .writing-grid h3 { font-family: Georgia, serif; font-size: 22px; line-height: 1.2; margin: 0 0 8px; }
-  .writing-grid h3 a { color: inherit; }
-  .writing-grid h3 a:hover { color: var(--accent); }
   .writing-grid .ex { font-size: 15px; color: var(--muted); margin: 0 0 10px; line-height: 1.45; }
   .writing-grid .date {
     font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
@@ -191,7 +174,7 @@
   .availability a:hover { color: var(--accent); }
 
   /* FOOTER */
-  footer.site {
+  footer {
     margin-top: 60px;
     border-top: 4px solid var(--ink);
     padding-top: 14px;
@@ -202,11 +185,11 @@
     color: var(--muted);
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
   }
-  footer.site .links a { margin-right: 18px; }
+  footer .links a { margin-right: 18px; }
 
   @media (max-width: 880px) {
     .nameblock h1 { font-size: 40px; }
-    .about { grid-template-columns: 1fr; }
+    .about, .consulting { grid-template-columns: 1fr; }
     .writing-grid { grid-template-columns: 1fr; }
     .latest h2 { font-size: 32px; }
   }
@@ -217,17 +200,17 @@
 
   <!-- NAMEBLOCK -->
   <div class="nameblock">
-    <h1>{{ site.author.name }}</h1>
-    <div class="role">Economist <span class="dot">&middot;</span> {{ site.author.location }} <span class="dot">&middot;</span> Cross-Asset Macro Research</div>
+    <h1>Vikram Bahure</h1>
+    <div class="role">Economist <span class="dot">·</span> London <span class="dot">·</span> Cross-Asset Macro Research</div>
   </div>
 
   <nav class="topnav">
     <a href="/about/">About</a>
     <a href="/consulting/">Consulting</a>
     <a href="/writing/">Writing</a>
-    <a href="mailto:{{ site.author.email }}">Email</a>
+    <a href="mailto:economics.vikram@gmail.com">Email</a>
     <span class="spacer"></span>
-    <a href="{{ '/CV.pdf' | relative_url }}" class="cta">Curriculum Vitae &darr;</a>
+    <a href="/CV.pdf" class="cta">Curriculum Vitae &darr;</a>
   </nav>
 
   <!-- ABOUT -->
@@ -243,55 +226,60 @@
           <div><dt>Doctorate</dt><dd>PhD, Economics &middot; University of Geneva</dd></div>
           <div><dt>Now</dt><dd>Consulting Economist, Public First</dd></div>
           <div><dt>Focus</dt><dd>AI economics &middot; Impact assessment &middot; Cross-asset macro</dd></div>
-          <div><dt>Location</dt><dd>{{ site.author.location }}</dd></div>
+          <div><dt>Location</dt><dd>London, UK</dd></div>
         </dl>
       </aside>
     </div>
   </section>
 
   <!-- LATEST -->
-  {% assign latest = site.posts.first %}
-  {% if latest %}
-  {% assign latest_cats = latest.categories | where_exp: "c", "c != 'Research'" %}
   <section class="section latest">
     <div class="section-eyebrow">Latest</div>
-    <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
-    <p class="dek">{{ latest.excerpt | strip_html | strip }}</p>
-    <div class="byline">By {{ site.author.name }} &nbsp;&middot;&nbsp; {{ latest.date | date: "%-d %B %Y" }}{% if latest_cats.size > 0 %} &nbsp;&middot;&nbsp; {{ latest_cats | join: " / " }}{% endif %}</div>
-    <a href="{{ latest.url | relative_url }}" class="read-more">Read the full piece &rarr;</a>
+    <h2>Who is paying for AI?</h2>
+    <p class="dek">The build-out has quietly shifted from cash to credit, and the credit is increasingly hard to see through.</p>
+    <div class="byline">By Vikram Bahure &nbsp;&middot;&nbsp; 29 May 2026 &nbsp;&middot;&nbsp; Research / Macro</div>
+    <p>The companies building artificial intelligence have started to borrow to pay for it. For most of the past decade the five big hyperscalers funded their data-centre spending entirely from operating cash flow. In 2026 that reverses: capital spending will roughly equal operating cash flow, on a reported bill of about $646bn.</p>
+    <p>The question is no longer how much cash Big Tech throws off. It is who is lending it the difference, and how sound that lending is.</p>
+    <a href="/research/macro/ai-investment-financing/" class="read-more">Read the full piece &rarr;</a>
   </section>
-  {% endif %}
 
-  <!-- SELECTED WRITING -->
-  {% if site.posts.size > 1 %}
+  <!-- WRITING -->
   <section class="section">
     <div class="section-eyebrow">Selected writing</div>
     <div class="writing-grid">
-      {% for post in site.posts offset:1 limit:3 %}
-      {% assign post_cats = post.categories | where_exp: "c", "c != 'Research'" %}
       <article>
-        <div class="cat">{{ post_cats | join: " &middot; " }}</div>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="ex">{{ post.excerpt | strip_html | strip | truncate: 180 }}</p>
-        <div class="date">{{ post.date | date: "%-d %B %Y" }}</div>
+        <div class="cat">Macro &middot; Commodities</div>
+        <h3><a href="/research/macro/india-oil-shock-passthrough/">India Oil-Shock Pass-Through</a></h3>
+        <p class="ex">A cross-asset view of how a Hormuz-driven oil shock transmits into India's current account, INR risk, and crude-sensitive sectors.</p>
+        <div class="date">18 May 2026</div>
       </article>
-      {% endfor %}
+      <article>
+        <div class="cat">Rates &middot; Trading</div>
+        <h3><a href="/research/rates/btp-schatz-convergence/">BTP&ndash;Schatz Convergence</a></h3>
+        <p class="ex">A Johansen-based mean-reversion trade in Italian and German 2Y yields, with backtest results and regime checks.</p>
+        <div class="date">18 May 2026</div>
+      </article>
+      <article>
+        <div class="cat">Macro &middot; Geopolitics</div>
+        <h3><a href="/writing/no-exit-game-theory-iran-war/">No Exit: Game Theory of the Iran War</a></h3>
+        <p class="ex">Why both sides keep escalating and what off-ramps remain &mdash; a strategic-form view of the conflict.</p>
+        <div class="date">29 March 2026</div>
+      </article>
     </div>
   </section>
-  {% endif %}
 
   <!-- AVAILABILITY -->
   <p class="availability">
-    Available for selected consulting briefs &mdash; <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    Available for selected consulting briefs &mdash; <a href="mailto:economics.vikram@gmail.com">economics.vikram@gmail.com</a>
   </p>
 
-  <footer class="site">
-    <div>&copy; {{ site.author.name }} {{ site.time | date: "%Y" }} &nbsp;&middot;&nbsp; {{ site.author.location }}</div>
+  <footer>
+    <div>&copy; Vikram Bahure 2026 &nbsp;&middot;&nbsp; London</div>
     <div class="links">
-      <a href="{{ '/CV.pdf' | relative_url }}">CV</a>
-      <a href="mailto:{{ site.author.email }}">Email</a>
+      <a href="/CV.pdf">CV</a>
+      <a href="mailto:economics.vikram@gmail.com">Email</a>
       <a href="https://github.com/vikrambahure">GitHub</a>
-      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a href="/feed.xml">RSS</a>
     </div>
   </footer>
 

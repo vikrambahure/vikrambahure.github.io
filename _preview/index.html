@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homepage redesign — previews</title>
+<style>
+  body {
+    margin: 0; padding: 48px 32px 80px;
+    background: #fafafa; color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px; line-height: 1.55;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  h1 {
+    font-family: Georgia, serif; font-size: 36px;
+    margin: 0 0 6px; letter-spacing: -0.01em;
+  }
+  .sub { color: #666; margin: 0 0 32px; }
+  ol { padding: 0; margin: 0; list-style: none; }
+  ol > li {
+    border: 1px solid #ddd; background: #fff;
+    padding: 22px 26px; margin-bottom: 16px; border-radius: 4px;
+  }
+  ol > li h2 {
+    margin: 0 0 6px; font-size: 19px;
+    font-family: Georgia, serif; letter-spacing: -0.005em;
+  }
+  ol > li .tag {
+    display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: .15em;
+    color: #fff; background: #1a1a1a; padding: 3px 8px; margin-right: 8px;
+    vertical-align: middle;
+  }
+  ol > li .tag.salmon { background: #fff1e5; color: #990f3d; border: 1px solid #990f3d; }
+  ol > li .tag.white  { background: #fff; color: #b4451a; border: 1px solid #b4451a; }
+  ol > li .tag.cream  { background: #f4ede0; color: #0b3d62; border: 1px solid #0b3d62; }
+  ol > li .tag.old    { background: #eee; color: #333; border: 1px solid #ccc; }
+  ol > li p { margin: 8px 0 14px; color: #444; }
+  ol > li .open {
+    font-size: 13px; text-transform: uppercase; letter-spacing: .12em;
+    background: #1a1a1a; color: #fff; text-decoration: none;
+    padding: 8px 14px; display: inline-block;
+  }
+  ol > li .open:hover { background: #990f3d; }
+  .note {
+    margin-top: 28px; padding: 18px; background: #fffbe6; border: 1px solid #f0e4a0;
+    font-size: 14px; line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Homepage redesign &mdash; four to compare</h1>
+  <p class="sub">All editorial, all recruiter-friendly. None of them call themselves "the paper."</p>
+
+  <ol>
+
+    <li>
+      <span class="tag salmon">A &middot; Editorial</span>
+      <h2>De-papered FT &mdash; salmon + claret, sectioned</h2>
+      <p>Closest to the format you liked. Same FT salmon paper and serif typography, but the section labels are now plain English: <em>About / Latest / Selected writing / Consulting</em>. About moved up to the top so a recruiter sees credentials before scrolling. CV is the prominent dark button in the nav.</p>
+      <a class="open" href="home-A-editorial.html">Open A &rarr;</a>
+    </li>
+
+    <li>
+      <span class="tag white">B &middot; Scholar</span>
+      <h2>Working-paper / academic homepage &mdash; white, narrow, dense</h2>
+      <p>Quiet, white, single column, serif throughout. Reads like a Harvard or LSE faculty page. Big "Vikram Bahure" + a sharp one-paragraph bio at the top with CV/email/GitHub right there; everything else is a tightly-typeset list with annotations. Signals: serious researcher, no marketing.</p>
+      <a class="open" href="home-B-scholar.html">Open B &rarr;</a>
+    </li>
+
+    <li>
+      <span class="tag cream">C &middot; Magazine</span>
+      <h2>Designer magazine cover &mdash; chart-led hero + contents</h2>
+      <p>Cream paper, deep navy + fire-red accents (matches your existing Special Report templates). Big editorial hero with the AI piece headline alongside its real funding-mix chart. Below: an "identity strip" with credentials, then numbered contents cards, then three "departments" (About / Consulting / CV). Most design-forward; most distinctive.</p>
+      <a class="open" href="home-C-magazine.html">Open C &rarr;</a>
+    </li>
+
+    <li>
+      <span class="tag old">v2 &middot; Reference</span>
+      <h2>The earlier FT-newspaper mockup &mdash; with Vol/Edition (for contrast)</h2>
+      <p>The original preview you liked the format of but rightly flagged for over-mimicking a paper. Kept here only as a reference point.</p>
+      <a class="open" href="home-v2.html">Open v2 &rarr;</a>
+    </li>
+
+  </ol>
+
+  <div class="note">
+    <strong>Nothing here is live.</strong> All four files sit in <code>_preview/</code>, which Jekyll ignores by default. Open them locally and tell me which direction wins &mdash; or what to mix from each. Once you pick, I'll write up the spec, then wire the chosen design into the actual Jekyll layouts so it replaces the current home page on the live site.
+  </div>
+
+</div>
+</body>
+</html>

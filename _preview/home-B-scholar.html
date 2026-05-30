@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vikram Bahure — Economist</title>
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #111111;
+    --muted: #5b5b5b;
+    --rule: #d4d4d4;
+    --accent: #b4451a;          /* burnt-sienna academic accent */
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Charter', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { border-bottom-color: var(--accent); }
+
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 32px 80px; }
+
+  /* HEAD */
+  header { margin-bottom: 36px; }
+  .topbar {
+    display: flex; justify-content: space-between; align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+  }
+  .topbar h1 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin: 0;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+  .topbar nav {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+  }
+  .topbar nav a { color: var(--muted); margin-left: 16px; border: none; }
+  .topbar nav a:hover { color: var(--accent); }
+
+  .lede { font-size: 18px; margin: 0 0 14px; }
+  .lede strong { font-weight: 600; }
+  .lede em { color: var(--muted); font-style: italic; }
+  .quick-links {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 18px;
+  }
+  .quick-links a { color: var(--ink); border-bottom: 1px solid var(--rule); margin-right: 14px; padding-bottom: 1px; }
+  .quick-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* SECTIONS */
+  section { margin-top: 44px; }
+  section > h2 {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: var(--muted);
+    margin: 0 0 18px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* WRITING LIST */
+  .work { list-style: none; padding: 0; margin: 0; }
+  .work li { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .work li:last-child { border-bottom: none; }
+  .work .row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 18px;
+    margin-bottom: 4px;
+  }
+  .work .title {
+    font-size: 19px; font-weight: 600; line-height: 1.3;
+    color: var(--ink);
+    border-bottom: none;
+  }
+  .work .title:hover { color: var(--accent); }
+  .work .date {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px; color: var(--muted); white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .work .summary { color: var(--muted); font-size: 16px; line-height: 1.5; margin: 4px 0 0; }
+  .work .cat {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* CONSULTING */
+  .consulting p { margin: 0 0 12px; }
+  .consulting .areas {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px;
+    margin: 14px 0 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px; color: var(--muted);
+  }
+  .consulting .areas div { padding: 6px 0; border-top: 1px solid var(--rule); }
+
+  /* CONTACT */
+  .contact-list {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    list-style: none; padding: 0; margin: 0;
+  }
+  .contact-list li { padding: 8px 0; border-top: 1px solid var(--rule); }
+  .contact-list li:last-child { border-bottom: 1px solid var(--rule); }
+  .contact-list strong {
+    color: var(--ink); display: inline-block; width: 100px;
+    font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: .12em;
+  }
+  .contact-list a { color: var(--ink); border-bottom: 1px solid var(--rule); }
+  .contact-list a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    margin-top: 60px; padding-top: 18px; border-top: 1px solid var(--rule);
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .topbar { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .work .row { flex-direction: column; gap: 2px; }
+    .consulting .areas { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="topbar">
+      <h1>Vikram Bahure</h1>
+      <nav>
+        <a href="/about/">About</a>
+        <a href="/consulting/">Consulting</a>
+        <a href="/writing/">Writing</a>
+        <a href="/CV.pdf">CV</a>
+      </nav>
+    </div>
+
+    <p class="lede">
+      <strong>Consulting economist in London.</strong>
+      PhD in Economics, University of Geneva (2024); MPhil in Finance.
+      <em>Currently at Public First.</em>
+      I write independently on cross-asset macro &mdash; rates, FX, commodities, and volatility &mdash;
+      with a focus on macroeconomic transmission and tradeable questions.
+    </p>
+
+    <div class="quick-links">
+      <a href="/CV.pdf">Curriculum vitae</a>
+      <a href="mailto:economics.vikram@gmail.com">economics.vikram@gmail.com</a>
+      <a href="https://github.com/vikrambahure">GitHub</a>
+    </div>
+  </header>
+
+  <!-- RESEARCH -->
+  <section>
+    <h2>Research &amp; writing</h2>
+    <ul class="work">
+      <li>
+        <div class="row">
+          <a class="title" href="/research/macro/ai-investment-financing/">Who is paying for AI?</a>
+          <span class="date">May 2026</span>
+        </div>
+        <p class="summary">The AI build-out has quietly shifted from cash to credit, and the credit is increasingly hard to see through. A financing-and-payoff view of hyperscaler capex.</p>
+        <span class="cat">Macro &middot; Markets</span>
+      </li>
+      <li>
+        <div class="row">
+          <a class="title" href="/research/macro/india-oil-shock-passthrough/">India Oil-Shock Pass-Through: A Leontief Cascade View for a Hormuz Closure</a>
+          <span class="date">May 2026</span>
+        </div>
+        <p class="summary">A cross-asset view of how a Hormuz-driven oil shock transmits into India's current account, INR risk, and crude-sensitive downstream sectors.</p>
+        <span class="cat">Macro &middot; Commodities</span>
+      </li>
+      <li>
+        <div class="row">
+          <a class="title" href="/research/rates/btp-schatz-convergence/">BTP&ndash;Schatz Convergence: A Johansen-Based Mean-Reversion Trade</a>
+          <span class="date">May 2026</span>
+        </div>
+        <p class="summary">A working paper on a Johansen-based mean-reversion trade in Italian and German 2Y yields, with backtest results, regime checks, and open research gaps.</p>
+        <span class="cat">Rates &middot; Trading</span>
+      </li>
+      <li>
+        <div class="row">
+          <a class="title" href="/writing/no-exit-game-theory-iran-war/">No Exit: Game Theory of the Iran War</a>
+          <span class="date">Mar 2026</span>
+        </div>
+        <p class="summary">Why both sides keep escalating and what off-ramps remain &mdash; a strategic-form view of the Iran conflict.</p>
+        <span class="cat">Macro &middot; Geopolitics</span>
+      </li>
+      <li>
+        <div class="row">
+          <a class="title" href="/writing/fire-on-the-water-hormuz/">Fire on the Water: Hormuz</a>
+          <span class="date">Mar 2026</span>
+        </div>
+        <p class="summary">Iran-war scenarios and what they mean for oil markets &mdash; a Special Report on the Strait of Hormuz.</p>
+        <span class="cat">Macro &middot; Commodities</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CONSULTING -->
+  <section class="consulting">
+    <h2>Consulting</h2>
+    <p>I take on a small number of consulting briefs each year. Engagements are typically scoped pieces of work with a clear deliverable &mdash; an economic-impact assessment, a sectoral model, a quantitative analysis, or a board-ready memo.</p>
+    <p><a href="/consulting/">How I work &rarr;</a></p>
+    <div class="areas">
+      <div>Economic Impact Assessment</div>
+      <div>AI Economics &amp; Productivity</div>
+      <div>Industrial Organisation</div>
+      <div>Defence Quantitative Analysis</div>
+      <div>City &amp; Regional Modelling</div>
+      <div>Technical Writing</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li><strong>Email</strong> <a href="mailto:economics.vikram@gmail.com">economics.vikram@gmail.com</a></li>
+      <li><strong>CV</strong> <a href="/CV.pdf">Curriculum vitae (PDF)</a></li>
+      <li><strong>Code</strong> <a href="https://github.com/vikrambahure">github.com/vikrambahure</a></li>
+      <li><strong>Based</strong> London, UK</li>
+    </ul>
+  </section>
+
+  <footer>
+    <div>&copy; Vikram Bahure 2026</div>
+    <div><a href="/feed.xml">RSS</a></div>
+  </footer>
+
+</div>
+</body>
+</html>
