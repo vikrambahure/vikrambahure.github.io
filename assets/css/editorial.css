@@ -127,7 +127,7 @@ a:hover { color: var(--accent); }
   margin-bottom: 18px;
 }
 .latest p { margin: 0 0 14px; max-width: 68ch; }
-.latest .read-more {
+.latest .read-more, .about-prose .read-more {
   display: inline-block;
   margin-top: 6px;
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;

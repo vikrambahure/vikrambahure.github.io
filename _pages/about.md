@@ -42,11 +42,11 @@ The work starts with an economic mechanism, then moves to data, model choice, si
 
 ## Current Research Focus
 
-- Rates: European front-end convergence, curve factors, policy-path deviations, and inflation-linked pricing.
-- FX: macro factor signals, walk-forward validation, dollar cycles, and INR-linked transmission.
-- Equity indices and volatility: Nifty options, volatility regimes, dealer gamma, and expiry-pinning behaviour.
-- Commodities: energy supply chains, oil and gas benchmarks, and macro transmission into inflation and external balances.
-- UK macro: inflation scenarios, gilt-curve factors, SONIA policy-path gaps, and breakeven analysis.
+- **Rates** — European front-end and curve factors.
+- **FX** — macro factor signals and dollar cycles.
+- **Equity volatility** — Nifty options and volatility regimes.
+- **Commodities** — energy supply chains and oil/gas passthrough.
+- **UK macro** — inflation, gilt curve, and breakevens.
 
 ## Portfolio Purpose
 

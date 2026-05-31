@@ -26,6 +26,9 @@
   </header>
 
   <nav class="topnav">
+    {% for item in site.data.navigation.main %}
+      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+    {% endfor %}
     <span class="spacer"></span>
     <a href="https://www.linkedin.com/in/vikram-bahure/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="mailto:{{ site.author.email }}">Email</a>
