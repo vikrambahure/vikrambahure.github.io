@@ -206,6 +206,56 @@ a:hover { color: var(--accent); }
   max-width: 60ch;
 }
 
+/* ============ IDENTITY STRIP (about page) ============ */
+.identity-strip {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 8px 0 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.identity-strip .identity-photo img {
+  width: 140px;
+  height: 140px;
+  max-width: 140px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  filter: grayscale(8%);
+}
+.identity-meta dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.identity-meta dt {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.identity-meta dd {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .identity-strip {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: left;
+  }
+  .identity-strip .identity-photo img { width: 110px; height: 110px; max-width: 110px; }
+}
+
 /* ============ CONTENT (markdown-rendered pages) ============ */
 .content {
   max-width: 720px;
