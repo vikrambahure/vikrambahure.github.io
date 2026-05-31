@@ -1,9 +1,5 @@
 main:
+  - title: "Home"
+    url: /
   - title: "Profile"
     url: /about/
-  - title: "Research"
-    url: /research/
-  - title: "Code"
-    url: /code/
-  - title: "Writing"
-    url: /writing/
