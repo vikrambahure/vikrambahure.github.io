@@ -143,45 +143,35 @@ a:hover { color: var(--accent); }
 .selected-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 24px;
 }
 .selected-grid article {
   border-top: 2px solid var(--ink);
-  padding-top: 16px;
+  padding-top: 10px;
 }
 .selected-grid .cat {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: .14em;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   color: var(--accent);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .selected-grid h3 {
   font-family: Georgia, serif;
-  font-size: 26px;
-  line-height: 1.18;
-  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0 0 6px;
   letter-spacing: -0.005em;
 }
 .selected-grid h3 a { color: inherit; }
 .selected-grid h3 a:hover { color: var(--accent); }
 .selected-grid .ex {
-  font-size: 16px;
-  color: var(--ink);
-  margin: 0 0 12px;
-  line-height: 1.5;
-}
-.selected-grid .read-more {
-  display: inline-block;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-  color: var(--accent);
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 2px;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.45;
 }
 
 @media (max-width: 760px) {
